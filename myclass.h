@@ -6,8 +6,10 @@ class MyClass{
 	public:
 		MyClass();
 		int var;
+		//const int var2;
 		void fun();
-		int sum(int a,int b);
+		const int cons();
+		void sum(int a,int b);
 	private:
 	protected:	
 	

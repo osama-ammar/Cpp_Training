@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
-adding namespace std;
-//inheritance from base class doesn't in clude constructors and destructors.however they are called when making or deleting an object in derived class
+using namespace std;
+//inheritance from base class doesn't include constructors and destructors.however they are called when making or deleting an object in derived class
 // the base constructor is called first then derived constructor then derived destructor then base destructor
 //polymorphism : single function with deferent implementations
 class animal{
@@ -12,7 +12,7 @@ class animal{
             }
         string colour;  
         void set_colour(string c){
-            colour=c
+            colour=c;
         }; 
         
         virtual void come(){};   //good implementation to add this , it tells you that the derived class may have this function . if[virtual void come()=0](pure virtual function) then,derived functions should have this function name
@@ -52,7 +52,7 @@ class dog:public animal{
     public:
         dog(){};
         void come(){
-            cout<<"..how..how.."<<<colour<<endl;
+            cout<<"..how..how.."<<colour<<endl;
         }
     
 
@@ -69,7 +69,10 @@ int main(){
     a2->set_colour("yellow");
     
     c1.come();
+    cout<<c1.colour<<endl;
+    
     d1.come();
+    cout<<d1.colour<<endl;
 
 
 };

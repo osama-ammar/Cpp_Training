@@ -20,9 +20,9 @@ type modifiers: modify some data types like integers
 
 
 
-
-
 */
+
+
 #include <iostream>
 #include <string>
 using namespace std;
@@ -33,11 +33,11 @@ unsigned long int a=2;
 
 unsigned long int *ip; //declaration and definition  of a pointer, (pointer is a variable that holds the memory address of another variable ,its type is according to variable it points to )
 float * fb;
-string*sb;
+string *sb;
 
 ip=&a;
 
-cout<<a<<endl<<ip<<endl<<*ip<<endl;
+//cout<<a<<endl<<ip<<endl<<*ip<<endl;
 
 
 
@@ -51,7 +51,7 @@ for (int i=0;i<3;i++){
 	arr[i]=i*2;
 	sum+=i;	
 }
-//out<<arr<<endl<<arrb<<endl<<arr[6]<<endl<<sum<<endl;
+cout<<arr<<endl<<arrb<<endl<<arr[6]<<endl<<sum<<endl;
 
 int arr2d[3][3]={
 {1,2,3},

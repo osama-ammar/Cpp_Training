@@ -13,20 +13,17 @@ void fun0(int a,int b,int c)   //by this method (assigning the arguments by valu
 void fun2(int *a) //by this method (assigning the arguments by reference -not value- we can make modification to the parameter, we take a copy of variable address and use it to access the variable itself in the memory..this saves memory rather than copying very large variable sizes
 	{
 		
-	//	int *a=70;	
+		 * a=70;
+		 cout<<*a<<endl;
+		 	
 	}
 
-void fun(int a,int b,int c) 
-	{
-		int sum=a+b+c;
-		cout<<sum<<endl;	
-	}
-	
+
 	
 int fun (float a,float b,float c) {  // this is called function overloading to make the same function valid for many types of inputs 
-		int sum=a+b+c;
+		float sum=a+b+c;
 		cout<<sum<<endl;	
-	}
+}
 	
 int factorial (int n){					//this is call recursion : making a function recall itself (figures for recursion and memory in c++)
 		if (n==1){					// the exit condition (base case) important in recursion 
@@ -37,13 +34,15 @@ int factorial (int n){					//this is call recursion : making a function recall i
 			return n*factorial(n-1);
 		}
 
+};
+
 /*void print_arr (int arr[],int size){	       //argument here is an array
 		for (int i;x<size;x++){
 			cout<<arr[i]<<endl;		
 		}
 	}*/
 	
-int main();{
+int main(){
 		//srand(34) //if used  we will obtain a true random number tht will be produced every time you used the same seed
 	//srand(time(0)) //if used  we will guarantee obtaining a true random number using the current time as a seed 
 	for (int i ;i<8;i++){
@@ -52,13 +51,14 @@ int main();{
 		
 	int var=3;
 	fun2(&var);
+	cout<<var<<endl;
 	
 	fun(1,2,3);
 	fun(1.2,2.8,4.5);
 	
 	
 	return 0;
-}
+};
 
 
 

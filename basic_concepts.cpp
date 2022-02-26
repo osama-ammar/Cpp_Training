@@ -28,8 +28,8 @@ int main()                          // this function is used in any c++ program 
     a++ ;
 //    a-- ;
 //    a+=1;
-    int anew=++b ;
-    int bnew=b++ ;
+    int anew=++b ;    //adding anew to b
+    int bnew=b++ ; //adding increment 1 to b
     cout<< a<< endl << anew << endl<< bnew<< endl;
 
 	return 0 ;                      // termination of main function

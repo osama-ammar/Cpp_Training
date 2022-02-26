@@ -29,13 +29,26 @@ class person{
 	
 	private:
 		string name;
-		Birth bd;		
+		Birth bd;
+		int var=12;
+		friend void modify(person &obj){    // this is called friend function -not a class member - used to access private members and modify them
+		    obj.name="lion"
+		    cout<<obj.name<<endl;
+		}
 	
 	
 	public:
 	person(string n,Birth b):
 		name(n),bd(b){
 		}
+		
+	person (int money):	m(money)    // a constructor
+	
+	person operator+(person &obj){
+	    person sum;
+	    sum.m=this->m + obj.m;
+	    return m;
+	}
 	
 		
 	void print_info(){
@@ -53,6 +66,7 @@ int main(){
 	person p("osama",bd);
 	
 	p.print_info();
+	modify(p);
 	
 }
 
