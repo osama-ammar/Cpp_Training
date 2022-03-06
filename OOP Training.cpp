@@ -1,5 +1,5 @@
 // an object in oop has attribute(the current state of the object),identity,behavior(methods..what this object can do
-//abstraction means providing only essential information to the outside world rather than how things work and implementation details
+//abstraction : means providing only essential information to the outside world rather than how things work and implementation details
 #include <iostream>
 #include <string>
 using namespace std;
