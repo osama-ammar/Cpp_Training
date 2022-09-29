@@ -1,9 +1,0 @@
-D:/cpp_opencv_test/build/CMakeFiles/Experimental.dir
-D:/cpp_opencv_test/build/CMakeFiles/Nightly.dir
-D:/cpp_opencv_test/build/CMakeFiles/Continuous.dir
-D:/cpp_opencv_test/build/CMakeFiles/NightlyMemoryCheck.dir
-D:/cpp_opencv_test/build/CMakeFiles/cpp_opencv_test.dir
-D:/cpp_opencv_test/build/CMakeFiles/PACKAGE.dir
-D:/cpp_opencv_test/build/CMakeFiles/RUN_TESTS.dir
-D:/cpp_opencv_test/build/CMakeFiles/ALL_BUILD.dir
-D:/cpp_opencv_test/build/CMakeFiles/ZERO_CHECK.dir
