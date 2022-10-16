@@ -39,7 +39,7 @@ class BankAccount {
         ~BankAccount(){         // called destructor.opposite of constructor and called automatically when a member is destroyed -useful in releasindg memory and resources-
         }
         
-        BankAccount(int a,const int b) : regvar(a),constvar(b) //initializing many types of variables
+        BankAccount(int a,const int b) : regvar(a),constvar(b) //initializing many types of variables...when adding a member to the class
 		{
 		cout<<regvar<<endl;
 		cout<<constvar<<endl;	
@@ -55,11 +55,13 @@ int main(){
     test.setname("agent1");
     test.getname();
     
-    /*BankAccount test(3,8) ;
-	test *ptr = &test;     //using a pointer to access the test's member
+///////////////////////////////////////////////////////////////////////////////
+
+    BankAccount test2(3,8) ;
+	BankAccount *ptr = &test2;     //using a pointer to access the test's member
     ptr->sayHi();                  //to access the member's pointer methods use (->) operator.....//to access the member method use (.) operator
-    ptr->setname("agent1");
-    ptr->getname();*/
+    ptr->setname("agent2");
+    ptr->getname();
     
        
     return 0 ;

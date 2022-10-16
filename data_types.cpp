@@ -104,6 +104,13 @@ cout<<"size of osdouble is : "<<sizeof(osdouble)<<" bytes"<<endl;
 cout<<" osdouble is : "<<osdouble<<" as seen the precision is not as we declare it , it's decreased due to the type this variable is stored with"<<endl;
 
 
+
+
+char value=65; 
+
+cout<<"value of type char  "<<value<<endl;
+cout<<"value of type char  "<<static_cast<int>(value)<<endl;
+
 }
 
 
