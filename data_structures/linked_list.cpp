@@ -4,6 +4,8 @@
 //the first node in the linked lidt is only a pointer called head, the final node containn a variable and a pointer pointing to null (not poiting to any thing)
 //
 
+// note: I noticed that , with head node  we do not use (head->data) or (head->next).....so treat head as only a pointer the first node ...and it's used directly
+// xnode=head..means ....................................head=xnode means.that head will point to this node ...head=xnode.next...means head will point to the node next to this node
 
 
 #include <iostream>
@@ -49,6 +51,34 @@ void insert_node(int value){
     }
 
 };
+
+
+
+
+
+
+
+void insert_begin(int value){
+    node * new_node = new node; // a pointer of type node that points to a place in the memory that has this allocated empty node
+    new_node->data=value;       // storing a value to the node using its reference 
+
+    //at this point ,we have a node with value..this not is not connected to any thing in the memory
+    new_node->next=head; // new node points to first node             //note: if you use (new_node->next=head->next) the new node will replace the first node ??
+    head=new_node; //making head points to our new node               //note: if you use (head->next=new_node) the inserted node will be the 2nd ??
+
+};
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -114,6 +144,54 @@ void modify (int value){
 };
 
 
+// a function to delete_last node from  linked list 
+//it will make the prevoius node points to the node that is next to the target node )make a pridge)...then deleting the target node
+void delete_last (){
+
+    node* current_node;     //this pointer will be used as a checker ..it will go through each node
+    node* previous_node;   
+
+
+    current_node=head;
+    previous_node=head;
+
+    //
+    while (current_node->next!=NULL){   //if this node is not our target node
+
+       //previous_node stand previous the current node
+        previous_node=current_node; 
+        current_node=current_node->next; //cuurent node move to next node
+
+    } 
+    previous_node->next=NULL;
+    free(current_node); //deleting the current node from memory
+
+    
+        //cout<<current_node->data<<"\t"; //to print the value of the final node
+ 
+
+};
+
+
+void delete_begin (){
+
+    node* current_node;     //this pointer will be used as a checker ..it will go through each node
+    node*next_node; 
+
+
+    current_node=head;
+    next_node=head->next;
+
+    head=next_node;
+   //->next=NULL;
+    free(current_node); //deleting the current node from memory
+
+ 
+
+};
+
+
+
 
 
 
@@ -121,16 +199,18 @@ void modify (int value){
 int main(){
 
 
-    insert_node(33);
-    insert_node(21);
+    int list[]={22,34,55,66,67,68,99};
 
-    insert_node(32);
-    insert_node(21);
+    for (int i : list)
+        {insert_node(i);
+        }
+        
 
-    insert_node(38);
-    insert_node(20);
+    //delete_last();
+    //modify(21);
+    //insert_begin(222);
+    delete_begin();
 
-    modify(21);
     display ();
 
 
