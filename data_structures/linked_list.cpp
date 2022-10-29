@@ -19,7 +19,7 @@ struct node{
 
 };
 
-node* head =NULL; // global scope
+node *head =NULL; // global scope
 
 void insert_node(int value){
     node * new_node = new node; // a pointer of type node that points to a place in the memory that has this allocated empty node
@@ -31,7 +31,7 @@ void insert_node(int value){
 
 
     if (head==NULL){            //if true (head not pointing to anything) then our node wil be the first node of the linked list...
-        head = new_node;        //so we will make the head pointer to point to our node ( it will carry the address of our new node)
+        head = new_node;        //so we will make the head pointer to point to our node ( it will carry the address of our new node)..since new node is a pointer to a new node : there will be no problem to type head=new_node
         new_node->next=NULL;    //then we will terminate our list by making the next pointer to point to Null
 
     }else{
@@ -63,9 +63,11 @@ void insert_begin(int value){
     new_node->data=value;       // storing a value to the node using its reference 
 
     //at this point ,we have a node with value..this not is not connected to any thing in the memory
-    new_node->next=head; // new node points to first node             //note: if you use (new_node->next=head->next) the new node will replace the first node ??
-    head=new_node; //making head points to our new node               //note: if you use (head->next=new_node) the inserted node will be the 2nd ??
+    new_node->next=head; // new node->next will points to th previous first node ..so that it takes its place          //note: if you use (new_node->next=head->next) the new node will replace the first node ??
+    cout<<new_node->data<<endl;
 
+    head=new_node; //making head points to our new node               //note: if you use (head->next=new_node) the inserted node will be the 2nd ??
+    cout<<new_node->data<<endl;
 };
 
 
@@ -209,7 +211,8 @@ int main(){
     //delete_last();
     //modify(21);
     //insert_begin(222);
-    delete_begin();
+    //delete_begin();
+    insert_begin(100);
 
     display ();
 

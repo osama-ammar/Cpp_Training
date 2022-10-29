@@ -1,4 +1,4 @@
-
+//stack data structure (last in first out)
 
 
 #include <string.h>
@@ -6,12 +6,12 @@
 using namespace std;
 
 
-#define size 5          //not closed expression ?
-int stack[size];        //
-int top=-1;             //
+#define size 5          //used to define a constant value....
+int stack[size];        //declaring a stack of size
+int top=-1;             //this vaariable will be used to indicate the last value of the stack ....in this case it indicates an empty stack.
 
 
-void pop();
+int pop();
 void push(int value);
 int peek(int value);
 
@@ -31,15 +31,17 @@ void push(int value){
 
 }
 
-void pop(){
+int pop(){
 
 
     if (top == -1){
         cout<<"Stack underflow"<<endl;
         }else{
         cout<<"removed item is :"<<stack[top]<<endl;    
-        top--;
+
         cout<<"TOP after poping is = "<<top<<endl;
+
+        return(top--);
         }
 }
 
@@ -55,7 +57,7 @@ int peek(){
         return stack[top];   
 
         }
-}
+};
 
 
 
