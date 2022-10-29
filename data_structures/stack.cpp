@@ -1,4 +1,6 @@
 
+
+
 #include <string.h>
 #include <iostream>
 using namespace std;
@@ -86,7 +88,7 @@ int main()
 
     peek();
 
-    //for(int i : stack){cout<<i<<endl;}
+
 
 
 
