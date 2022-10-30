@@ -75,7 +75,7 @@ void enqueue(int value){
         cout<<"queue is overflow"<<endl;
     }
 
-    if(rear==0){front=0;}
+    if(rear==0){front=0;}//
 }
 
 
