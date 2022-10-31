@@ -1,4 +1,5 @@
 template<class T,class G> //using of templates enables us make functions and classes accept many data types...Should be used
+
 #include <iostream>
 #include <string>
 using namespace std;
