@@ -43,8 +43,7 @@ int main()
     return 0;
 }
 
-void enqueue(int value)
-{
+void enqueue(int value){
     node *new_node = new node; // a pointer of type node that points to a place in the memory that has this allocated empty node
     new_node->data = value;
     new_node->next = NULL;
