@@ -25,8 +25,8 @@ predict_landmarks(Array input_image, vec3 size)
         Array segment = array_crop(input_image, min_corner, max_corner, mn::Allocator allocator = mn::allocator_top());
 
         // making model prediction on this segment
-        // auto onnx_session = onnx_session_new(ONNX_MODEL_CEPHALOMETRIC_LANDMARK, mn::str_lit(LANDMARKS_STR[landmark]));
-        vec3 prediction = model(segment);
+
+        vec2 prediction = 	detect_cephalometric_landmark(const nd::Array<uint8_t> &image, LANDMARK landmark);
 
         // remapping the predicted location from the segment to the original image
         vec3 final_prediction = prediction + min_corner;
@@ -37,3 +37,29 @@ predict_landmarks(Array input_image, vec3 size)
 
     return predictions_list
 }
+
+
+auto onnx_session = onnx_session_new(ONNX_MODEL_CEPHALOMETRIC_LANDMARK, mn::str_lit(LANDMARKS_STR[landmark]));
+output_tensors = onnx_session.ort_session->Run(Ort::RunOptions{nullptr}, input_names, &image_tensor, 1, output_names, 1);
+
+
+
+
+
+
+cvml/include/cvml/Cephalometric_Landmarks_Detection.h
+
+To get an enum from cvml you have to specify its namespace first, like cvml::LANDMARK_POG .
+
+for (size_t landmark_index = 0; landmark_index < LANDMARKS_COUNT: ++landmark_index)
+{
+    LANDMARK landmark = (LANDMARK)landmark_index;
+    ivec2 result=cvml::detect_cephalometric_landmark(image, landmark);
+    
+}
+
+auto landmark_result = cvml::detect_cephalometric_landmark (image, landmark)
+
+
+	mn::Result<ivec2>
+	detect_cephalometric_landmark(const nd::Array<uint8_t> &image, LANDMARK landmark)
