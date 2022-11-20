@@ -1,4 +1,7 @@
-+
+
+#include <iostream>
+#include <string>
+using namespace std;
 /*
 
 to be searched for:
@@ -22,6 +25,8 @@ namespace osama
 
 }
 
+
+
 namespace malek
 {
     void func()
@@ -30,6 +35,9 @@ namespace malek
     }
 
 }
+
+
+
 
 void fun()
 {
@@ -42,6 +50,30 @@ void fun()
     cout << var << endl;
 }
 
+
+// looks like limited items data types
+enum Shape
+    {
+        Circle,
+        Square,
+        Triangle,
+        Oval,
+        Polygon,
+        NumShapes
+    };
+
+
+enum Landmarks
+    {
+        pognion=3,
+        nasion=6,
+        sella=9
+    };
+
+
+
+
+
 int main()
 {
 
@@ -53,14 +85,57 @@ int main()
     // cast operator to convert data type to another .....(int) variable.....
     float num = 2.3;
     int number1 = (int)num;
-    cout << number1 << endl;
-
+    //cout << number1 << endl;
+////////////////////////////////////////////////////////////////////////////////////
     osama::func();
     malek::func();
-    cout << osama::var << endl;
+    //cout << osama::var << endl;
+
+    int iter=7;
+//////////////////////////////////////////////////////////////////////////////////////
+    //getting the index
+    Landmarks land = (Landmarks)iter;
+    cout<<"land mark : "<<land<<endl;
+
+    //getting the value
+    Landmarks prand = nasion;    
+    cout<<"prand mark : "<<prand<<endl;
+
+    //iterating through enum
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////
+    //ternary operator if (true)...result will be = passsed ................
+    string result = (iter >= 40) ? "passed" : "failed";
+    //can be nested 
+    result = (iter == 0) ? "Zero" : ((iter > 0) ? "Positive" : "Negative");
+////////////////////////////////////////////////////////////////////////////////////
+
+
 
     return 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*
     shift+alt+A.......multible comment
