@@ -31,7 +31,7 @@ type modifiers: modify some data types like integers
 #include <string>
 
 #include <iomanip> // to use setprecision
-
+#include <vector>
 
 using namespace std;
 int main(){
@@ -47,7 +47,16 @@ ip=&a;
 
 //cout<<a<<endl<<ip<<endl<<*ip<<endl;
 
+// an STL type
+vector<int> vec_var;
 
+vec_var.insert(vec_var.begin(),11); //inserting a value in specific location of the vector
+vec_var.insert(vec_var.begin(),22);
+int vec_length=sizeof(vec_var)/sizeof(int);
+cout<<vec_var.size()<<endl;
+for (auto i : vec_var){
+	cout<<" "<<i<<endl;
+}
 
 
 int arr[4]={1,2,3,4};
