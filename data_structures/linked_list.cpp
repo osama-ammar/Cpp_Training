@@ -15,7 +15,8 @@ using namespace std;
 
 struct node{
     int data;
-    node* next;
+    node* next; //what does this mean.......(the type of var next is node ???)
+                //this pointer ~ points to a whole node
 
 };
 
@@ -23,6 +24,8 @@ node *head =NULL; // global scope
 
 void insert_node(int value){
     node * new_node = new node; // a pointer of type node that points to a place in the memory that has this allocated empty node
+                                //why not (node new_node = new node)?????
+
     new_node->data=value;       // storing a value to the node using its reference 
 
     //at this point ,we have a node with value..this not is not connected to any thing in the memory

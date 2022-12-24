@@ -25,7 +25,7 @@ int main()
 
 
 
-    // writing a text in this manner give toyy many options later
+    // writing a text in this manner give you many options later
     char text[] {"Hi there my age is 35"};
     char text2[] {"Hello there my age is 29"};   
 

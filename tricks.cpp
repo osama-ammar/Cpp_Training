@@ -8,7 +8,7 @@ to be searched for:
     namespace osama .........explain..........?????????
     var|=5     meaning
     FUNCTION OVERLOADING
-    interleaved arry
+    interleaved array
 
 
 */
@@ -44,6 +44,7 @@ void fun()
     // when using static in declaration , a space for the variable is allocated during the life time of the progrsm
     // space FOR THE  variable is allocated ONCE only
     // the value of the variable in the prevoius function call is carried through the next call
+    //the first oroginal value will be used once only in the first call
     static int var = 1;
 
     var++;
@@ -91,7 +92,7 @@ int main()
     malek::func();
     //cout << osama::var << endl;
 
-    int iter=7;
+    int iter=2;
 //////////////////////////////////////////////////////////////////////////////////////
     //getting the index
     Landmarks land = (Landmarks)iter;
