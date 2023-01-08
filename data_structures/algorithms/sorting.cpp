@@ -1,19 +1,33 @@
 /*
     sorting algorithms
     -------------------
-
+    1- Bubble sort algorithm
+    2-
+    3-
+    4-
+    5-
 
 
 
 
 */
+#include <iostream>
+using namespace std;
 
 // Bubble sort in C++ --------------------------------------------------------------------------------------------
 // avg Time complexity = O(n2)
 // Space complexity = O(1)
 //
-#include <iostream>
-using namespace std;
+
+
+
+// function to swap the the position of two elements  in the ??????????????????????????? it accepts array[i] and &array[i] how ??
+void swap(int *a, int *b)
+{
+int temp = *a;                  // holding the element to be used later 
+    *a = *b;
+    *b = temp;
+}
 
 // perform bubble sort
 void bubbleSort(int array[], int size)
@@ -34,9 +48,7 @@ void bubbleSort(int array[], int size)
 
                 // swapping elements if elements
                 // are not in the intended order
-                int temp = array[i];
-                array[i] = array[i + 1];
-                array[i + 1] = temp;
+                swap(&array[i+1], &array[i]);
             }
         }
     }
@@ -45,10 +57,9 @@ void bubbleSort(int array[], int size)
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Optimized bubble sort in C++
 /*we can introduce an extra variable swapped. The value of swapped is set true if there occurs swapping of elements. Otherwise, it is set false.
-
 After an iteration, if there is no swapping, the value of swapped will be false. This means elements are already sorted and there is no need to perform further iterations.
-
 This will reduce the execution time and helps to optimize the bubble sort.*/
+
 // avg Time complexity = O(n2)
 // Space complexity = O(2)
 //
@@ -71,12 +82,9 @@ void optimized_bubbleSort(int array[], int size)
             // change > to < to sort in descending order
             if (array[i] > array[i + 1])
             {
-
-                // swapping occurs if elements
-                // are not in intended order
-                int temp = array[i];
-                array[i] = array[i + 1];
-                array[i + 1] = temp;
+                // swapping elements if elements
+                // are not in the intended order
+                swap(&array[i+1], &array[i]);
 
                 swapped = 1;
             }
@@ -92,21 +100,11 @@ void optimized_bubbleSort(int array[], int size)
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // Selection sort in C++
-/*election sort is a sorting algorithm that selects the smallest element from an unsorted list in each iteration and places that element at the beginning of the unsorted list.*/
+//selection sort is a sorting algorithm that selects the smallest element from an unsorted list in each iteration and places that element at the beginning of the unsorted list.
 
 //  Time complexity = O(n2)
 // Space complexity = O(1)
 
-#include <iostream>
-using namespace std;
-
-// function to swap the the position of two elements
-void swap(int *a, int *b)
-{
-    int temp = *a;
-    *a = *b;
-    *b = temp;
-}
 
 void selectionSort(int array[], int size)
 {
@@ -275,12 +273,12 @@ void printArray(int arr[], int size)
 ////////////////////////////////////////////////
 int main()
 {
-    int data[] = {-2, 45, 0, 11, -9};
+    int data[] = {-2, 45,33,12,6,55,44,74,88,11,88,5,6,5, 0, 11, -9};
 
     // find the array's length
     int size = sizeof(data) / sizeof(data[0]);
 
-    bubbleSort(data, size);
+    selectionSort(data, size);
 
     cout << "Sorted Array in Ascending Order:\n";
     printArray(data, size);
