@@ -23,7 +23,7 @@ int main()
     string message3 {5,'h'};
     string message4 {message1,2,6};
 
-
+    //arr[3]++
 
     // writing a text in this manner give you many options later
     char text[] {"Hi there my age is 35"};

@@ -19,12 +19,10 @@ using namespace std;
 // Space complexity = O(1)
 //
 
-
-
 // function to swap the the position of two elements  in the ??????????????????????????? it accepts array[i] and &array[i] how ??
 void swap(int *a, int *b)
 {
-int temp = *a;                  // holding the element to be used later 
+    int temp = *a; // holding the element to be used later
     *a = *b;
     *b = temp;
 }
@@ -48,7 +46,7 @@ void bubbleSort(int array[], int size)
 
                 // swapping elements if elements
                 // are not in the intended order
-                swap(&array[i+1], &array[i]);
+                swap(&array[i + 1], &array[i]);
             }
         }
     }
@@ -84,7 +82,7 @@ void optimized_bubbleSort(int array[], int size)
             {
                 // swapping elements if elements
                 // are not in the intended order
-                swap(&array[i+1], &array[i]);
+                swap(&array[i + 1], &array[i]);
 
                 swapped = 1;
             }
@@ -100,11 +98,10 @@ void optimized_bubbleSort(int array[], int size)
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // Selection sort in C++
-//selection sort is a sorting algorithm that selects the smallest element from an unsorted list in each iteration and places that element at the beginning of the unsorted list.
+// selection sort is a sorting algorithm that selects the smallest element from an unsorted list in each iteration and places that element at the beginning of the unsorted list.
 
 //  Time complexity = O(n2)
 // Space complexity = O(1)
-
 
 void selectionSort(int array[], int size)
 {
@@ -126,10 +123,10 @@ void selectionSort(int array[], int size)
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-// Merge two subarrays L and M into arr void merge(int arr[], int p, int q, int r)
-//  Time complexity = O(n*log n)
-// Space complexity = O(n)
+// Merge Sort
+//  Merge two subarrays L and M into arr ----- void merge(int arr[], int p, int q, int r)
+//   Time complexity = O(n*log n)
+//  Space complexity = O(n)
 
 // Merge two subarrays L and M into arr
 void merge(int arr[], int p, int q, int r)
@@ -139,7 +136,8 @@ void merge(int arr[], int p, int q, int r)
     int n1 = q - p + 1;
     int n2 = r - q;
 
-    int L[n1], M[n2];
+    int L[n1] = {};
+    int M[n2] = {};
 
     for (int i = 0; i < n1; i++)
         L[i] = arr[p + i];
@@ -260,6 +258,130 @@ void quickSort(int array[], int low, int high)
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Counting sort algorithm
+// better than algorithms that depends on comparison
+// in this algorithm , we will have 3 arrays  , the input array , count array , cumulative array
+// count array : its size is the max element in the input array , its elements are the count of each element in the input array
+// cumulative array : from the count array
+
+// Complexity = O(n+k)  (linear complexity)
+// space complexity = O(max)
+
+void countSort(int array[], int size)
+{
+    // The size of count must be at least the (max+1) but
+    // we cannot assign declare it as int count(max+1) in C++ as
+    // it does not support dynamic memory allocation.
+    // So, its size is provided statically.
+    int output[10];
+    int count[10];
+    int max = array[0];
+
+    // Find the largest element of the array
+    for (int i = 1; i < size; i++)
+    {
+        if (array[i] > max)
+            max = array[i];
+    }
+
+    // Initialize count array with all zeros.
+    for (int i = 0; i <= max; ++i)
+    {
+        count[i] = 0;
+    }
+
+    // Store the count of each element
+    for (int i = 0; i < size; i++)
+    {
+        count[array[i]]++;
+    }
+
+    // Store the cummulative count of each array
+    for (int i = 1; i <= max; i++)
+    {
+        count[i] += count[i - 1];
+    }
+
+    // Find the index of each element of the original array in count array, and
+    // place the elements in output array
+    for (int i = size - 1; i >= 0; i--)
+    {
+        output[count[array[i]] - 1] = array[i];
+        count[array[i]]--;
+    }
+
+    // Copy the sorted elements into original array
+    for (int i = 0; i < size; i++)
+    {
+        array[i] = output[i];
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Radix sorting algorithm
+// better than algorithms that depends on comparison
+// Radix sort is a sorting algorithm that sorts the elements by first grouping the individual digits of the same place value.
+//           Then, sort the elements according to their increasing/decreasing order.
+//           Use any stable sorting technique to sort the digits at each significant place
+
+// Complexity = O(n+k)  (linear complexity)
+// space complexity = O(max)
+
+
+// Function to get the largest element from an array
+int getMax(int array[], int n)
+{
+    int max = array[0];
+    for (int i = 1; i < n; i++)
+        if (array[i] > max)
+            max = array[i];
+    return max;
+}
+
+// Using counting sort to sort the elements in the basis of significant places
+void countingSort(int array[], int size, int place)
+{
+    const int max = 10;
+    int output[size];
+    int count[max];
+
+    for (int i = 0; i < max; ++i)
+        count[i] = 0;
+
+    // Calculate count of elements
+    for (int i = 0; i < size; i++)
+        count[(array[i] / place) % 10]++;
+
+    // Calculate cumulative count
+    for (int i = 1; i < max; i++)
+        count[i] += count[i - 1];
+
+    // Place the elements in sorted order
+    for (int i = size - 1; i >= 0; i--)
+    {
+        output[count[(array[i] / place) % 10] - 1] = array[i];
+        count[(array[i] / place) % 10]--;
+    }
+
+    for (int i = 0; i < size; i++)
+        array[i] = output[i];
+}
+
+// Main function to implement radix sort
+void radixsort(int array[], int size)
+{
+    // Get maximum element
+    int max = getMax(array, size);
+
+    // Apply counting sort to sort elements based on place value.
+    for (int place = 1; max / place > 0; place *= 10)
+        countingSort(array, size, place);
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -273,7 +395,7 @@ void printArray(int arr[], int size)
 ////////////////////////////////////////////////
 int main()
 {
-    int data[] = {-2, 45,33,12,6,55,44,74,88,11,88,5,6,5, 0, 11, -9};
+    int data[] = {-2, 45, 33, 12, 6, 55, 44, 74, 88, 11, 88, 5, 6, 5, 0, 11, -9};
 
     // find the array's length
     int size = sizeof(data) / sizeof(data[0]);
