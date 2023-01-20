@@ -13,7 +13,11 @@ using namespace std;
 //look at std::strcpy and std::strncpy
 
 
+void merge(int arr[], int x)
+{
+    cout << arr<<endl;
 
+}
 
 int main()
 {
