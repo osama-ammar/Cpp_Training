@@ -11,6 +11,10 @@ MyClass::MyClass(){    // :: called scope resulotion operator and  used to defin
 //int MyClass:: var=3;
 //const MyClass::var2=14; //this variable cannot be changed during the program
 
+void MyClass::set_var (int x){
+	this->var = x;	// like self in python ....will set member's var to x
+};
+
 
 void MyClass::sum(int a ,int b){
 	
