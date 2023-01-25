@@ -14,6 +14,45 @@ to be searched for:
 
 */
 
+
+/*
+inline functions : C++ provides an inline functions to reduce the function call overhead
+                    The overhead occures if the execution time of function is less than the switching time from the caller function to called function (callee)
+                    using of inline function is good for small functions
+                    it's just a request for the compiler , so the compiler may ignore this
+                    - we ask the compiler to copy code into program rather than function call
+                    - this saves time when calling a function ~ in normal case when you call a function in main , the compiler gooo toooo function definition and call it
+                    -but in inline function ...the time for GOIING TOOO  the function definition is saved 
+                    
+                    ex) :
+                        inline int cube(int s)
+                            {
+                                return s*s*s;
+                            }
+
+
+function overhead : Overhead is time spent not accomplishing useful work.
+                    When you call a function, stuff needs to happen to jump to it, 
+                    then more stuff happens to go back to where you were. In the middle,
+                    the content of your function is executed. The stuff that happens before and after is overhead
+
+
+
+virtual function :A virtual function in C++ is a base class member function that you can redefine in a derived class to achieve polymorphism
+
+
+
+*/
+
+
+
+
+
+
+
+
+
+
 //    function recursion : any continous inside operations like in case of prime numbers
 
 // pre processor directives (#) -------> dirct the preprocessor to ex) add extra code before compilations

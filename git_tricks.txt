@@ -1,0 +1,9 @@
+
+
+staged modifications : modifications waiting to be committed 
+
+stash : save the recent STATE after your modifications  &  revert to a clean current STATE before modifications
+
+
+git reset (hard)-----> undo commits and remove last modifications
+          (soft)-----> undo commits
