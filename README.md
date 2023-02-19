@@ -1,1 +1,5 @@
-Training on C++ concepts including data structures , OOP and mamory managemnt
+#Training on C++ concepts including :
+-data structuresز
+-OOP 
+-Algorithms
+-mamory managemnt
