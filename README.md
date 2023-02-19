@@ -1,4 +1,4 @@
-#Training on C++ concepts including :
+# Training on C++ concepts including :
 -data structuresز
 -OOP 
 -Algorithms
