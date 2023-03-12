@@ -1,9 +1,9 @@
-template<class T,class G> //using of templates enables us make functions and classes accept many data types...Should be used
 
 #include <iostream>
 #include <string>
 using namespace std;
 
+template<class T,class G> //using of templates enables us make functions and classes accept many data types...Should be used
 
 
 T sum(T a, T b){  //the same concept can be used in classes but when declaring  a function in the class and define it outside , [T classname<T>::fun(){some code}] the <T> should be used  
@@ -70,10 +70,10 @@ int main(){
     
     int e1=3;
     int e2=6;
-    if (e1<e2){throw 20} // code of error is 20 (or any thing you want even string)
+    if (e1<e2){throw 20} // code of error is 20 (or any thing you want )
     
     catch(int x){   //handling the exception    // read more about catch(...) 
-       cout<<x<<"e1 is greater  "<<endl; 
+       cout<<x<<"e1 is greater  "<<endl;  //this statement printed if error occur , x will be 20 ->num after throw
         }
     }
     

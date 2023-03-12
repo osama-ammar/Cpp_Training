@@ -4,6 +4,27 @@
 #include <cstdlib>   // to take random function from it
 using namespace std;
 
+
+/*
+E-difference between overloading and overriding?
+-overloading : making functions valid for many datsa types
+				here , we have 2 functions with the same name , but different  abilities
+				we declare 2 functions in the same name but different parameters
+				-compile time polymorphism
+				-can be done in one class
+
+-overriding : redifing a function \method with the same name and parameters 
+				usually occuers in class inhertince , when child class override a parent method
+				-run time polymorphism 
+				-should be done in 2 classes
+*/
+
+
+
+
+
+
+
 void fun0(int a,int b,int c)   //by this method (assigning the arguments by value  we cannot make modification to the parameter ,we just take a copy of the variable and use it as an argument
 	{
 		int sum=a+b+c;
