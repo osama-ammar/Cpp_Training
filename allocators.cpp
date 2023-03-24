@@ -8,14 +8,10 @@
     destroy : destroy -destruct an object in the allocated storge 
 
 
-
 */
 
 #include <iostream>
 using namespace std;
-
-
-
 
 
 int main(){
@@ -36,7 +32,7 @@ int main(){
 
 
     cout<<*arr<<endl;
-    cout<<*arr<<endl;
+    cout<<*arr++<<endl;
 
 }
 

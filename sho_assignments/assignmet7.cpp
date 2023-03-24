@@ -31,7 +31,7 @@ class Vehicle
                 speed=speed_;
                 fuel_cabacity = fuel_cabacity_;
                 fuel_consunption = fuel_consunption_;
-                cout<<" a new member is added ";
+                cout<<" a new member is added \n ";
             }
 
 
@@ -46,6 +46,7 @@ class Vehicle
                 return (hrs * speed);
             }
 
+            //(polymorphism) this function will be used in the child class but with different behaviour
             void display()
             {
                 cout << "Vehicle information :"<<"model : "<<model<<endl<<"registration_no : "<<registration_no<<endl<<"speed : "<<speed<<endl<<"fuel_cabacity : "<<fuel_cabacity<<endl<<"fuel_consunption : "<<fuel_consunption<<endl;
@@ -85,8 +86,8 @@ class Truck: public Vehicle
 
         void display()
         {
-            Vehicle::display();
-            cout<<cargo_limit<<endl;
+            //Vehicle::display();
+            cout<<"cargo limit :"<<cargo_limit<<endl;
         }
 
 
