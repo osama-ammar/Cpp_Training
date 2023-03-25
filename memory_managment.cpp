@@ -22,7 +22,7 @@ delete ptr_stackvar2;
 ptr_stackvar2 = nullptr;
 /////////////////////////////////////////////////////////////////////////////
 
-//nt *p= new int;   //by this expression we request (book) a memory location in heap using pointer and new
+//int *p= new int;   //by this expression we request (book) a memory location in heap using pointer and new
 int *p=new int(3);              //we store a value in this location
 cout<<*p<<endl;    // we use this value
 delete p ;         //freeing up (heap) memory from this value using delete , but the pointer still not deleted ,So pointer is left pointing to non existing memoty location(dangling pointer)      
