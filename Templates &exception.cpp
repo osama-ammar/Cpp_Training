@@ -4,16 +4,15 @@
 using namespace std;
 
 template<class T,class G> //using of templates enables us make functions and classes accept many data types...Should be used
-
-
 T sum(T a, T b){  //the same concept can be used in classes but when declaring  a function in the class and define it outside , [T classname<T>::fun(){some code}] the <T> should be used  
     return a+b;
     };
     
+template<class T,class G>
 T bigger(T a, G b){ //we can use 2 different data types
     return (a>b ? a:b); //means if a>b return a ...else return b
     };    
-
+template<class T>
 class node{
     public:
         node(T a, T b):
@@ -28,6 +27,7 @@ class node{
         
 };
 
+template<class T>
 T node<T>::equal(){
         return (a=b ? a:b);
         };
@@ -51,6 +51,7 @@ int main(){
     };
     
 //////////////////////////////////////////////////////////////////////////////////////////////////////////    
+template<class T>
 class cat{
     cat(T x){
      cout<<x<<endl;   
