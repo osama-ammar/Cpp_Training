@@ -7,13 +7,21 @@
 using namespace std;
 
 //composition:
-// means uusing exchanging functionality between classes
+// means using exchanging functionality between classes
 
 // initialization in cpp
 // int var1 = 1; copy initialisation 
 // int var2(31); direct initialisation
 // int var3{23}; uniform initialisation
 
+/*
+class is a user defined data type composed of  attributes , methods(behavior) , setters and getters
+-attributes , methods etc are called class members
+-anny function inside the class is inline function
+-
+
+
+*/
 
 class Person{
 	
@@ -75,9 +83,13 @@ void Person::set_outvar(string k)
 
 
 
-
-
-
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/*
+-encapsulation : to hide data - using access modifiers 
+-inheritance
+-abstraction
+-polymorphism
+*/
 
 // an object in oop has attribute(the current state of the object),identity,behavior(methods..what this object can do
 //abstraction means providing only essential information to the outside world rather than how things work and implementation details
@@ -136,10 +148,116 @@ class dog:public animal{
 
 
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/*
+abstracted class : classes that have at least one virtual pure method  
+    -you cannot make objects from abstracted class
+    -if the daughter class doesn't override the abstract method in the parent class then this daughter class become abstract class too 
+*/
+class Shape {
+    protected:
+        int height ;
+
+    //if ew tried to access this member variable - normally will give error
+    //only seen inside the class not outside ( encapsulation)
+    //
+    private:
+        int mother_name ;
+
+    public:
+        //constructors
+        Shape()
+        {
+            height =0;
+        }
+
+        Shape(int x)
+        {
+            // if you type (int height = x;) a new variable will be initialized and many problems will occccccccccccuers
+            height = x;
+        }
+
+
+        //setters
+        void setHight(int x)
+        {
+            height=x;
+        }
+
+        //getters
+        int getHight()
+        {
+            return height ;
+        }
+
+        //virtal pure method : this method is written to be overriden by daughter classes and cannot be used directly
+        // used to add abstraction to the class - normally parent class
+        // we just say that a method called (getArea) will be used by the coming daughter classes
+        virtual int getArea()=0; 
+        //methods
+        // int getArea()
+        // {
+        //     cout<<"shape Area :";
+        //     return 0 ;
+        // }
+
+};
 
 
 
+class Circle : public Shape{
+    public:
+        int radius ;
 
+        //constructors
+        Circle (int x) : Shape(x)
+        {
+            radius = x;
+        }
+
+        //methods -- will override the getArea in parent class
+        int getArea()
+        {
+            cout<<"circle Area :";
+            return  radius*2*3.14;
+        }
+
+};
+
+
+class Rectangle : public Shape{
+    private:
+        int width ;
+
+    public:
+        //constructors
+        Rectangle(int x ,int y) :Shape(x)
+        {
+            width = y;
+        }
+
+
+        //setters
+        void setWidth(int x)
+        {
+            width=x;
+        }
+
+        //getters
+        int getWidth()
+        {
+            return width ;
+        }
+
+        //
+        int getArea()
+        {
+            cout<<"Rectangle Area :";
+            return width*height ;
+        }
+
+};
 
 
 

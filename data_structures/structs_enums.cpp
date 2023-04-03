@@ -7,6 +7,7 @@ In C++, a structure is the same as a class except for a few differences. The mos
  A Structure is not secure and cannot hide its implementation details from the end user while a class is secure and 
  can hide its programming and designing details
 
+fast made simple classes
 
 Structures (also called structs) are a way to group several related variables into one place.
 Each variable in the structure is known as a member of the structure.
@@ -36,7 +37,10 @@ struct myDataType
     string myString;
 };
 
+
+//////////////////////////////
 //most comman initialization
+////////////////////////////////
 struct PrivateDetails   //name of the struct
 {
     int phone_number;
