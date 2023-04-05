@@ -21,7 +21,7 @@ class Shape {
         int mother_name ;
 
     protected:
-            int height ; //ca be accessed only from a daughter class
+        int height ; //ca be accessed only from a daughter class
 
     public:
         //constructors

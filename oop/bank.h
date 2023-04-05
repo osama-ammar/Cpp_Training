@@ -66,7 +66,7 @@ class Account{
         }
 
 
-        int transferMoney(Account a , int money)
+        int transferMoney(Account &a , int money)
         {
             if (money <=balance)
             {

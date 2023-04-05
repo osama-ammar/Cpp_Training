@@ -5,6 +5,7 @@
 #include "animal.h"
 #include "bank.h"
 #include "author.h"
+#include "date.h"
 using namespace std;
 
 
@@ -46,14 +47,27 @@ int main(){
     Account os("osama","1331",320000);
     Account sho("shima","1911",1000);
 
+    // os.credit(900);
+    // os.debit(2900);
+    // cout<<os.getBalance()<<endl;
 
-    os.credit(900);
-    os.debit(2900);
-    cout<<os.getBalance()<<endl;
+    // os.transferMoney(sho,18000);
+    // cout<<os.getBalance()<<endl;
+    // cout<<sho.getBalance()<<endl;
 
-    os.transferMoney(sho,18000);
-    cout<<os.getBalance()<<endl;
-    cout<<sho.getBalance()<<endl;
+    Date today;
+    today.setDate(2004,12,12);
+    Time t1(9,59,59);
+
+    // doing this will not affect t2 attributes it just take a copy of t1 and : 1-(will not update t2) 2-(update t1 only)
+    //because the applied method (nextSecond) here is a t1 method not a t2 method
+    // to solve this you should pass t1 to t2 by reference
+    // 
+    Time t2=t1.nextSecond();  //==
+
+    cout<<t2.getHour()<<":"<<t2.getMinute()<<":"<<t2.getSecond()<<endl;
+
+
 
 };
 
