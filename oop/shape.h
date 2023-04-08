@@ -57,12 +57,17 @@ class Shape {
         // used to add abstraction to the class - normally parent class
         // we just say that a method called (getArea) will be used by the coming daughter classes
         virtual int getArea()=0; 
-        //methods
-        // int getArea()
+
+
+        //virtual non pure method : enable polymorphism
+        // mean that parent object can call daughters method 
+        //virtual int getArea()
         // {
         //     cout<<"shape Area :";
         //     return 0 ;
         // }
+
+
 
         //destructor is called automatically at the end of object lifecycle
         //you cannot have multiple destructors (cannot be overloaded)

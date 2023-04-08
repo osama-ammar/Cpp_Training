@@ -64,18 +64,19 @@ int factorial (int n){					//this is call recursion : making a function recall i
 	}*/
 	
 int main(){
-		//srand(34) //if used  we will obtain a true random number tht will be produced every time you used the same seed
+	
+	//srand(34) //if used  we will obtain a true random number tht will be produced every time you used the same seed
 	//srand(time(0)) //if used  we will guarantee obtaining a true random number using the current time as a seed 
-	for (int i ;i<8;i++){
-		cout<<1+(rand()%10)<<endl; //psudo random number between 1 and 10
-	}	
+	// for (int i ;i<8;i++){
+	// 	cout<<1+(rand()%10)<<endl; //psudo random number between 1 and 10
+	// }	
 		
 	int var=3;
 	fun2(&var);
 	cout<<var<<endl;
 	
-	fun(1,2,3);
-	fun(1.2,2.8,4.5);
+	//fun(1,2,3);
+	//fun(1.2,2.8,4.5);
 	
 	
 	return 0;

@@ -13,6 +13,10 @@ class is a user defined data type composed of  attributes , methods(behavior) , 
 -anny function inside the class is inline function
 -
 
+
+this->   :  an automatically made pointer  for class attributes 
+
+
 */
 
 #include <iostream>
@@ -81,11 +85,13 @@ void Person::set_outvar(string k)
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
--encapsulation : to hide data - using access modifiers 
--inheritance
--abstraction
--polymorphism
-*/
+-encapsulation : to hide data - using access modifiers (public , private , protected)
+-inheritance  : daughter class can use methods from barent class
+-abstraction : using pure virtual methods(virtual int method_name =0 ) (abstract methods)
+				daughter classes will override this virtual method 
+-polymorphism :using pure virtual methods(virtual int method_name(){implementation} )
+				parent class can use daughters' methods  that have the same name 
+				polymorphism occuars in run time so it takes place in heap and initialized in heap
 
 // an object in oop has attribute(the current state of the object),identity,behavior(methods..what this object can do
 //abstraction means providing only essential information to the outside world rather than how things work and implementation details
@@ -95,6 +101,9 @@ void Person::set_outvar(string k)
 //polymorphism : single function with deferent implementations
 
 
+
+
+*/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 

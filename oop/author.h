@@ -20,15 +20,15 @@ class Author {
         }
 
         //parameterized constructor
-        Author(string n, string e, string g)
+        Author(string name, string email, string gender)
         {
-            name = n;
-            email = e;
-            gender = g;
+            this->name = name;
+            this->email = email;
+            this->gender = gender;
         }
 
-        void setName(string n){
-            name = n;
+        void setName(string name){
+            this->name = name;
         }
 
 
@@ -60,16 +60,16 @@ class Book {
         }
 
         //parameterized constructor
-        Book(string n, int e, int g , Author a)
+        Book(string title, int price, int quantity , Author author)
         {
-            title = n;
-            price = e;
-            quantity = g;
-            author = a;
+            this->title = title;
+            this->price = price;
+            this->quantity = quantity;
+            this->author = author;
         }
 
-        void setTitle(string n){
-            title = n;
+        void setTitle(string title){
+            this->title = title;
         }
 
 

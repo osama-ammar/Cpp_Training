@@ -35,17 +35,16 @@ int main(){
 	// cout<<result<<endl;    
 
 
+    Author * a1 = new Author("osama","osss@AI.com","male"); //initializing a pointer to an oblect class  in heap
+    string auth_name=a1->getName();  
+    cout<<auth_name<<endl;
 
-    // Author a1("osama","osss@AI.com","male") ;
-    // string auth_name=a1.getName();  
-    // cout<<auth_name<<endl;
+    Book b1("the Life",150,3,*a1);
+    Author y=b1.getAuthor();
+    y.showInfo();
 
-    // Book b1("the Life",150,3,a1);
-    // Author y=b1.getAuthor();
-    // y.showInfo();
-
-    Account os("osama","1331",320000);
-    Account sho("shima","1911",1000);
+    // Account os("osama","1331",320000);
+    // Account sho("shima","1911",1000);
 
     // os.credit(900);
     // os.debit(2900);
@@ -55,17 +54,16 @@ int main(){
     // cout<<os.getBalance()<<endl;
     // cout<<sho.getBalance()<<endl;
 
-    Date today;
-    today.setDate(2004,12,12);
-    Time t1(9,59,59);
+    // Date today;
+    // today.setDate(2004,12,12);
+    // Time t1(9,59,59);
 
     // doing this will not affect t2 attributes it just take a copy of t1 and : 1-(will not update t2) 2-(update t1 only)
     //because the applied method (nextSecond) here is a t1 method not a t2 method
     // to solve this you should pass t1 to t2 by reference
     // 
-    Time t2=t1.nextSecond();  //==
-
-    cout<<t2.getHour()<<":"<<t2.getMinute()<<":"<<t2.getSecond()<<endl;
+    //Time t2=t1.nextSecond();  //==
+    //cout<<t2.getHour()<<":"<<t2.getMinute()<<":"<<t2.getSecond()<<endl;
 
 
 
