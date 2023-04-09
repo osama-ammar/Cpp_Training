@@ -17,6 +17,17 @@ class is a user defined data type composed of  attributes , methods(behavior) , 
 this->   :  an automatically made pointer  for class attributes 
 
 
+Run time polymorphism :
+			- ocuuers in heap _ dynamic binding
+			- dynamic : memory is altered or allocated during runtime (Run Riding)
+			-ex) function overriding : where a function in parent and sons have same name && SIGNATURE (params no  , params type  )  but different behavior
+
+Compile time polymorphism :
+			-occuers in stack (static binding)
+			- static : memory is altered or allocated only in compile time (compiLe Loading)
+			-ex) function overloading : where a function in parent and sons have same name but DIFFERENT SIGNATURE (params no , params type
+			-ex) operator overloading : giving an operator a meaning that works with class objects
+
 */
 
 #include <iostream>
@@ -89,7 +100,7 @@ void Person::set_outvar(string k)
 -inheritance  : daughter class can use methods from barent class
 -abstraction : using pure virtual methods(virtual int method_name =0 ) (abstract methods)
 				daughter classes will override this virtual method 
--polymorphism :using pure virtual methods(virtual int method_name(){implementation} )
+-polymorphism :using pure or non pure virtual methods(virtual int method_name(){implementation} )
 				parent class can use daughters' methods  that have the same name 
 				polymorphism occuars in run time so it takes place in heap and initialized in heap
 
