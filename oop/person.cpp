@@ -44,13 +44,20 @@ class Person
             return this->id;
         }
 
+        void getInfo() //this method will be overridden ( modified by the child to extend it with additional  feature)
+        {
+            cout << "name : " << this->name << endl;
+            cout << "age : " << this->age << endl;
+            cout << "id : " << this->id << endl;
+        }
+
 
         ~Person(){
             cout<<"I'm destroyed"<<endl;
         }
 };
 
-
+// if the child don't have a method you  call , he will get it from his parent
 class Teacher : public Person
 {
     protected:
@@ -74,6 +81,13 @@ class Teacher : public Person
         {
             return this->salary;
         }
+
+        void getInfo() ////////////////
+        {
+            Person::getInfo();
+            cout<<"Salary : "<<this->salary<<endl;
+        }
+
 
 
 };
