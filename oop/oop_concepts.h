@@ -28,6 +28,14 @@ Compile time polymorphism :
 			-ex) function overloading : where a function in parent and sons have same name but DIFFERENT SIGNATURE (params no , params type
 			-ex) operator overloading : giving an operator a meaning that works with class objects
 
+Access specifiers in parent when inherited from child : 
+			- protected members can be accessed by childs only
+			1st of all :** private members , constructors destructors are not inherited 
+			in public inheritance : air filter
+			in protected inheritance : (public and protected) become protected
+			in private inheritance : (public and protected) become private
+
+
 */
 
 #include <iostream>
@@ -39,7 +47,7 @@ class Person{
 	private:
 		string name;
 		string birth_date;
-		int mony;
+		int money;
 
         string outside_var;
 
@@ -54,29 +62,40 @@ class Person{
 
 		// // this method of initialisation is called initalisation list ?? 	
 		// Person():
-		// name("osama"),birth_date("12-12-2015"),mony(1556){}
+		// name("osama"),birth_date("12-12-2015"),money(1556){}
 		
 		//constructor...note..name & _name
-		Person(string _name="",string _birth_date="",int _mony=1000)
+		Person(string _name="",string _birth_date="",int _money=1000)
 			{
 			name = _name;
 			birth_date = _birth_date;
-			mony = _mony;
+			money = _money;
 			};
 		
 
 		// this is called operator overloading like __add__ in python ?
-		int operator+(Person &obj)
+		int operator + (Person &obj)
 			{
 			Person sum;
-			sum.mony=this->mony + obj.mony;
-			return sum.mony;
+			sum.money=this->money + obj.money;
+			return sum.money;
 			}
 		
+
+		//operator overloading (enable us to do (ex) obj3 = obj1+obj2)
+		Person operator + (Person obj)
+		{
+			string name= this->name + obj.name;
+			string birth_date = this->birth_date + obj.birth_date;
+			int  money = this->money + obj.money;
+			return Person(name, birth_date, money)
+		}
+
+
 	
 		void print_info()
 			{
-			cout<<name<<endl<<birth_date<<endl<<mony<<endl;
+			cout<<name<<endl<<birth_date<<endl<<money<<endl;
 			}
 
         //only declared method and will bw defined later outside the scope  of the class

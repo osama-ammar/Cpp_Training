@@ -59,6 +59,7 @@ class Shape {
         virtual int getArea()=0; 
 
 
+
         //virtual non pure method : enable polymorphism
         // mean that parent object can call daughters method 
         //virtual int getArea()
@@ -67,7 +68,11 @@ class Shape {
         //     return 0 ;
         // }
 
-
+        //this function will be used later...
+        void descripe ()
+        {
+            cout<<" I'm a shape."<<endl;
+        }
 
         //destructor is called automatically at the end of object lifecycle
         //you cannot have multiple destructors (cannot be overloaded)
@@ -99,6 +104,13 @@ class Circle : public Shape{
             return  radius*2*3.14;
         }
 
+        void descripe ()
+        {
+            Shape::descripe();
+            cout<<" I'm a Circle ."<<endl;
+        }
+
+
 };
 
 
@@ -108,16 +120,16 @@ class Rectangle : public Shape{
 
     public:
         //constructors
-        Rectangle(int x ,int y) :Shape(x)
+        Rectangle(int x ,int width) :Shape(x)
         {
-            width = y;
+            this->width = width;
         }
 
 
         //setters
-        void setWidth(int x)
+        void setWidth(int width)
         {
-            width=x;
+            this->width=width;
         }
 
         //getters
@@ -132,6 +144,12 @@ class Rectangle : public Shape{
             cout<<"Rectangle Area :";
             return width*height ;
         }
+
+        void descripe ()
+        {
+            Shape::descripe();
+            cout<<" I'm a Rectangle ."<<endl;
+        }        
 
 };
 

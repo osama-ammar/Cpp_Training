@@ -2,7 +2,15 @@
 #include <string>
 using namespace std;
 
+/*
+this example shows the compositipn relationship ( has a relationship )
+where Author has a relationship with book and vice verse 
+and they are not inherit from each other
+in composition a class will be used/make the other class
 
+in inheritance you can say that class A is class B (circle is a shape) (dog is an animal)
+in composition you can say that class A is related to  class B (book has an author) (client has an account )
+*/
 
 class Author {
     private:
@@ -46,7 +54,7 @@ class Author {
 class Book {
     private:
         string title;
-        Author author;
+        Author author;  //composition
         int price;
         int quantity;
 
