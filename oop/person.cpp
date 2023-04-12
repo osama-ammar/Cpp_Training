@@ -2,12 +2,13 @@
 #include <iostream>
 using namespace std;
 
+// overloading : functions of same name / but different signature(arguments types & no)
 
-
+// oveRRiding : functions of SSame name / SSame signature(arguments types & no) / & inheritance occuar
 
 class Person 
 {
-    protected: //can be used in parent and child only
+    protected: // type here parameters that will be inheritted , can be used in parent and child only
         string name;
         int id;
         int age;

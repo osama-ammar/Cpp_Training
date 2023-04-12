@@ -1,4 +1,5 @@
 #include <string>
+#include <iostream>
 using namespace std;
 
 
@@ -6,6 +7,8 @@ using namespace std;
 In C++, a structure is the same as a class except for a few differences. The most important of them is security.
  A Structure is not secure and cannot hide its implementation details from the end user while a class is secure and 
  can hide its programming and designing details
+
+struct is public all time
 
 fast made simple classes
 
@@ -48,12 +51,28 @@ struct PrivateDetails   //name of the struct
     float money;
 };
 
+//struct inside structs
+struct PublicDetails   //name of the struct
+{
+    PrivateDetails person;
+    string cat_name;
+    float childs_no;
+};
+
+
+
+
 struct Point 
 {
     int x, y;
 };
 
 
+
+PrivateDetails enter_details (PrivateDetails x)
+{
+    cin>>x.money>>x.name>>x.phone_number;
+}
 
 // looks like limited items data types
 enum Shape
@@ -89,6 +108,12 @@ int main(){
 
     struct PrivateDetails wafaa;
     wafaa = {66066 , "wafaa Kamel",2122.5};
+
+    struct PublicDetails fofa;
+    fofa = {wafaa , "catty" ,6};
+    cout<<fofa.person.name<<endl;
+
+
 
     //array of structs
     struct Point array[10];
