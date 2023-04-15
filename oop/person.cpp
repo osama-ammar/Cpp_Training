@@ -12,6 +12,9 @@ class Person
         string name;
         int id;
         int age;
+        static int order ;  //  member shared between any object n the class
+                            //  will have one place in memory shared between objects
+                            //cannot take value zero inside the class ... cannot be zeroed in file.h file but in file.cpp
 
     public: //can be used anywhere
 

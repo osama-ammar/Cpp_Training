@@ -6,10 +6,11 @@
 #include "bank.h"
 #include "author.h"
 #include "date.h"
+#include "Person.h"
 using namespace std;
 
 
-
+int Person::order=0;
 
 
 Shape *shapeFactory(char some_char)
