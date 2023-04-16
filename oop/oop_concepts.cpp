@@ -1,18 +1,20 @@
 #include <iostream>
 #include <string>
-#include "oop_concepts.h"
+//#include "oop_concepts.h"
 #include "shape.h"
 #include "animal.h"
 #include "bank.h"
 #include "author.h"
 #include "date.h"
-#include "Person.h"
+#include "person.h"
 using namespace std;
 
-
+// you can zeroing static members only in .cpp files outside the class
 int Person::order=0;
 
 
+
+//
 Shape *shapeFactory(char some_char)
 {
     if (some_char == 'r')
@@ -24,7 +26,7 @@ Shape *shapeFactory(char some_char)
         return new Circle(5);
     }
 
-}
+};
 
 int main()
 {
@@ -44,20 +46,22 @@ int main()
     // cin>>cir.radius>>"\n"
 // ================================================================================================= //
     // polymorphism : the parent takes sons' shapes , initialized with pointers & new (IN HEAP)
-    Shape *ptr_shap;
-    ptr_shap = new Circle(100);
-    cout << ptr_shap->getArea() << endl;
-    ptr_shap = new Rectangle(5, 7);
-    cout << ptr_shap->getArea() << endl;
+    // Shape *ptr_shap;
+    // ptr_shap = new Circle(100);
+    // cout << ptr_shap->getArea() << endl;
+    // ptr_shap = new Rectangle(5, 7);
+    // cout << ptr_shap->getArea() << endl;
 
 // ================================================================================================= //
 
-    // Person visitor("osama","12/12/2014",999994);
-    // Person guest("kaomk","12/12/2024",444);
-    // visitor.print_info();
-    // //modify(p);
-    // int result = visitor+guest;
-    // cout<<result<<endl;
+    Person visitor("osama",144,23);
+    visitor.getOrder();
+    Person guest("kaomk",176,23);
+    guest.getOrder();
+    visitor.getInfo();
+    //modify(p);
+    int result = visitor+guest;
+    cout<<result<<endl;
 
     // Author * a1 = new Author("osama","osss@AI.com","male"); //initializing a pointer to an oblect class  in heap
     // string auth_name=a1->getName();

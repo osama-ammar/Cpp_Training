@@ -48,7 +48,7 @@ class Person{
 		string name;
 		string birth_date;
 		int money;
-
+		static int order;
         string outside_var;
 
 		friend void modify(Person &obj)
@@ -70,6 +70,7 @@ class Person{
 			name = _name;
 			birth_date = _birth_date;
 			money = _money;
+			this->order++;
 			};
 		
 
