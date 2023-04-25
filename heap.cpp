@@ -37,7 +37,8 @@ int main()
     ///////////////////////////////////////////////////////////////////////////////////////////
     /// array in heap ( use new d_type []  and delete [] )
     int size = 10 ; 
-    int* p_arr= new int [size];
+    int* p_arr= new int [size]; //p_arr is a pointer in stack that points to an array in the heap
+    
     delete [] p_arr ;
 
     return 0;
