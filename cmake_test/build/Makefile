@@ -152,6 +152,30 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hello_executable.dir\build.make CMakeFiles/Hello_executable.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+src/math.obj: src/math.cpp.obj
+.PHONY : src/math.obj
+
+# target to build an object file
+src/math.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hello_executable.dir\build.make CMakeFiles/Hello_executable.dir/src/math.cpp.obj
+.PHONY : src/math.cpp.obj
+
+src/math.i: src/math.cpp.i
+.PHONY : src/math.i
+
+# target to preprocess a source file
+src/math.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hello_executable.dir\build.make CMakeFiles/Hello_executable.dir/src/math.cpp.i
+.PHONY : src/math.cpp.i
+
+src/math.s: src/math.cpp.s
+.PHONY : src/math.s
+
+# target to generate assembly for a file
+src/math.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hello_executable.dir\build.make CMakeFiles/Hello_executable.dir/src/math.cpp.s
+.PHONY : src/math.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -164,6 +188,9 @@ help:
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... src/math.obj
+	@echo ... src/math.i
+	@echo ... src/math.s
 .PHONY : help
 
 

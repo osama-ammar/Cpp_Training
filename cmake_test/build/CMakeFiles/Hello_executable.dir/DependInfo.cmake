@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "D:/Code_store/Cpp_Training/cmake_test/main.cpp" "CMakeFiles/Hello_executable.dir/main.cpp.obj" "gcc" "CMakeFiles/Hello_executable.dir/main.cpp.obj.d"
+  "D:/Code_store/Cpp_Training/cmake_test/src/math.cpp" "CMakeFiles/Hello_executable.dir/src/math.cpp.obj" "gcc" "CMakeFiles/Hello_executable.dir/src/math.cpp.obj.d"
   )
 
 # Targets to which this target links.

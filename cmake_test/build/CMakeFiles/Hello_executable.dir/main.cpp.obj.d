@@ -136,4 +136,5 @@ CMakeFiles/Hello_executable.dir/main.cpp.obj: \
  c:\mingw64\include\c++\12.2.0\bits\basic_ios.tcc \
  c:\mingw64\include\c++\12.2.0\bits\ostream.tcc \
  c:\mingw64\include\c++\12.2.0\istream \
- c:\mingw64\include\c++\12.2.0\bits\istream.tcc
+ c:\mingw64\include\c++\12.2.0\bits\istream.tcc \
+ D:/Code_store/Cpp_Training/cmake_test/include/math.hpp

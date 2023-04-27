@@ -1,16 +1,20 @@
 #include <iostream>
+#include "math.hpp"
+
 using namespace std;
 
 
 /*
-make : a program that understands Makefile and executes the rules int it 
+make : a program that understands Makefile and executes the rules in it 
 
-Makefile : contains rules & commands to be execured
+Makefile : contains rules & commands to be executed
+
+
 
 cmake : a program that understands CMakeList file and executes the rules int it 
 
 CMakeList : contains commands simpler than those written in Makefile
-            used by cmake to generate make files for your project
+            used by cmake to generate make files for your  c/c++  project
 
 
 
@@ -18,6 +22,9 @@ CMakeList : contains commands simpler than those written in Makefile
                                     these generated files will be proper for MinGW generator (you can select your favorite generator)
 
                                     if you type make in command  , the executible will be generated
+                                    so to conclude the steps :
+                                        1-cmake reads cmakelists and generate make file
+                                        2- we use make to build this make file to generate the executable
 
 
 
@@ -25,5 +32,9 @@ CMakeList : contains commands simpler than those written in Makefile
 
 int main()
 {
-    cout << " Hello I'm make , cmake , makelist..........."<<endl;
+
+    int x ;
+    x = sum(4,6);
+
+    cout << " Hello I'm make , cmake , makelist......"<<x<<"....."<<G;
 }
