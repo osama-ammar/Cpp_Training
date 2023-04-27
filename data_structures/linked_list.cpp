@@ -3,10 +3,12 @@
 // each node in the linked list is (variable:that carry data , pointer:that carry address to the next node) ..each node occupies two places in memory
 //the first node in the linked lidt is only a pointer called head, the final node containn a variable and a pointer pointing to null (not poiting to any thing)
 //
+/*
+note: I noticed that , with head node  we do not use (head->data) or (head->next).....so treat head as only a pointer the first node ...and it's used directly
 
-// note: I noticed that , with head node  we do not use (head->data) or (head->next).....so treat head as only a pointer the first node ...and it's used directly
-// xnode=head..means ....................................head=xnode means.that head will point to this node ...head=xnode.next...means head will point to the node next to this node
-
+    head=xnode means.that head will point to this node 
+    head=xnode.next...means head will point to the node next to this node
+*/
 
 #include <iostream>
 #include <string>
@@ -20,7 +22,7 @@ struct node{
 
 };
 
-node *head =NULL; // global scope
+node* head =NULL; // global scope
 
 void insert_node(int value){
     node * new_node = new node; // a pointer of type node that points to a place in the memory that has this allocated empty node
