@@ -1,5 +1,6 @@
 {
     "files.associations": {
+        "*.txt": "cmake",
         "ostream": "cpp",
         "iostream": "cpp",
         "iomanip": "cpp",
@@ -46,6 +47,7 @@
         "xlocinfo": "cpp",
         "xmemory": "cpp",
         "xstddef": "cpp",
-        "xtr1common": "cpp"
+        "xtr1common": "cpp",
+        "fstream": "cpp"
     }
 }

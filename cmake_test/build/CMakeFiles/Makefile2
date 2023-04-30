@@ -63,21 +63,38 @@ CMAKE_BINARY_DIR = D:\Code_store\Cpp_Training\cmake_test\build
 
 # The main recursive "all" target.
 all: CMakeFiles/Hello_executable.dir/all
+all: lib/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
-preinstall:
+preinstall: lib/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
 clean: CMakeFiles/Hello_executable.dir/clean
+clean: lib/clean
 .PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory lib
+
+# Recursive "all" directory target.
+lib/all: lib/CMakeFiles/my_library.dir/all
+.PHONY : lib/all
+
+# Recursive "preinstall" directory target.
+lib/preinstall:
+.PHONY : lib/preinstall
+
+# Recursive "clean" directory target.
+lib/clean: lib/CMakeFiles/my_library.dir/clean
+.PHONY : lib/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/Hello_executable.dir
 
 # All Build rule for target.
-CMakeFiles/Hello_executable.dir/all:
+CMakeFiles/Hello_executable.dir/all: lib/CMakeFiles/my_library.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hello_executable.dir\build.make CMakeFiles/Hello_executable.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hello_executable.dir\build.make CMakeFiles/Hello_executable.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\Code_store\Cpp_Training\cmake_test\build\CMakeFiles --progress-num=1,2,3 "Built target Hello_executable"
@@ -85,7 +102,7 @@ CMakeFiles/Hello_executable.dir/all:
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Hello_executable.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Code_store\Cpp_Training\cmake_test\build\CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Code_store\Cpp_Training\cmake_test\build\CMakeFiles 5
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/Hello_executable.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start D:\Code_store\Cpp_Training\cmake_test\build\CMakeFiles 0
 .PHONY : CMakeFiles/Hello_executable.dir/rule
@@ -98,6 +115,32 @@ Hello_executable: CMakeFiles/Hello_executable.dir/rule
 CMakeFiles/Hello_executable.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hello_executable.dir\build.make CMakeFiles/Hello_executable.dir/clean
 .PHONY : CMakeFiles/Hello_executable.dir/clean
+
+#=============================================================================
+# Target rules for target lib/CMakeFiles/my_library.dir
+
+# All Build rule for target.
+lib/CMakeFiles/my_library.dir/all:
+	$(MAKE) $(MAKESILENT) -f lib\CMakeFiles\my_library.dir\build.make lib/CMakeFiles/my_library.dir/depend
+	$(MAKE) $(MAKESILENT) -f lib\CMakeFiles\my_library.dir\build.make lib/CMakeFiles/my_library.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\Code_store\Cpp_Training\cmake_test\build\CMakeFiles --progress-num=4,5 "Built target my_library"
+.PHONY : lib/CMakeFiles/my_library.dir/all
+
+# Build rule for subdir invocation for target.
+lib/CMakeFiles/my_library.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Code_store\Cpp_Training\cmake_test\build\CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 lib/CMakeFiles/my_library.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Code_store\Cpp_Training\cmake_test\build\CMakeFiles 0
+.PHONY : lib/CMakeFiles/my_library.dir/rule
+
+# Convenience name for target.
+my_library: lib/CMakeFiles/my_library.dir/rule
+.PHONY : my_library
+
+# clean rule for target.
+lib/CMakeFiles/my_library.dir/clean:
+	$(MAKE) $(MAKESILENT) -f lib\CMakeFiles\my_library.dir\build.make lib/CMakeFiles/my_library.dir/clean
+.PHONY : lib/CMakeFiles/my_library.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

@@ -86,14 +86,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Code_store\Cpp_Training\cmake_test\build\CMakeFiles D:\Code_store\Cpp_Training\cmake_test\build\\CMakeFiles\progress.marks
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
+	cd /d D:\Code_store\Cpp_Training\cmake_test\build && $(CMAKE_COMMAND) -E cmake_progress_start D:\Code_store\Cpp_Training\cmake_test\build\CMakeFiles D:\Code_store\Cpp_Training\cmake_test\build\lib\\CMakeFiles\progress.marks
+	cd /d D:\Code_store\Cpp_Training\cmake_test\build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 lib/all
 	$(CMAKE_COMMAND) -E cmake_progress_start D:\Code_store\Cpp_Training\cmake_test\build\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 clean
+	cd /d D:\Code_store\Cpp_Training\cmake_test\build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 lib/clean
 .PHONY : clean
 
 # The main clean target
@@ -102,92 +102,56 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 preinstall
+	cd /d D:\Code_store\Cpp_Training\cmake_test\build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 lib/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 preinstall
+	cd /d D:\Code_store\Cpp_Training\cmake_test\build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 lib/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
+	cd /d D:\Code_store\Cpp_Training\cmake_test\build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named Hello_executable
+# Convenience name for target.
+lib/CMakeFiles/my_library.dir/rule:
+	cd /d D:\Code_store\Cpp_Training\cmake_test\build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 lib/CMakeFiles/my_library.dir/rule
+.PHONY : lib/CMakeFiles/my_library.dir/rule
 
-# Build rule for target.
-Hello_executable: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 Hello_executable
-.PHONY : Hello_executable
-
-# fast build rule for target.
-Hello_executable/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hello_executable.dir\build.make CMakeFiles/Hello_executable.dir/build
-.PHONY : Hello_executable/fast
-
-#=============================================================================
-# Target rules for targets named my_library
-
-# Build rule for target.
-my_library: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 my_library
+# Convenience name for target.
+my_library: lib/CMakeFiles/my_library.dir/rule
 .PHONY : my_library
 
 # fast build rule for target.
 my_library/fast:
-	$(MAKE) $(MAKESILENT) -f lib\CMakeFiles\my_library.dir\build.make lib/CMakeFiles/my_library.dir/build
+	cd /d D:\Code_store\Cpp_Training\cmake_test\build && $(MAKE) $(MAKESILENT) -f lib\CMakeFiles\my_library.dir\build.make lib/CMakeFiles/my_library.dir/build
 .PHONY : my_library/fast
 
-main.obj: main.cpp.obj
-.PHONY : main.obj
+module.obj: module.cpp.obj
+.PHONY : module.obj
 
 # target to build an object file
-main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hello_executable.dir\build.make CMakeFiles/Hello_executable.dir/main.cpp.obj
-.PHONY : main.cpp.obj
+module.cpp.obj:
+	cd /d D:\Code_store\Cpp_Training\cmake_test\build && $(MAKE) $(MAKESILENT) -f lib\CMakeFiles\my_library.dir\build.make lib/CMakeFiles/my_library.dir/module.cpp.obj
+.PHONY : module.cpp.obj
 
-main.i: main.cpp.i
-.PHONY : main.i
-
-# target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hello_executable.dir\build.make CMakeFiles/Hello_executable.dir/main.cpp.i
-.PHONY : main.cpp.i
-
-main.s: main.cpp.s
-.PHONY : main.s
-
-# target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hello_executable.dir\build.make CMakeFiles/Hello_executable.dir/main.cpp.s
-.PHONY : main.cpp.s
-
-src/math.obj: src/math.cpp.obj
-.PHONY : src/math.obj
-
-# target to build an object file
-src/math.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hello_executable.dir\build.make CMakeFiles/Hello_executable.dir/src/math.cpp.obj
-.PHONY : src/math.cpp.obj
-
-src/math.i: src/math.cpp.i
-.PHONY : src/math.i
+module.i: module.cpp.i
+.PHONY : module.i
 
 # target to preprocess a source file
-src/math.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hello_executable.dir\build.make CMakeFiles/Hello_executable.dir/src/math.cpp.i
-.PHONY : src/math.cpp.i
+module.cpp.i:
+	cd /d D:\Code_store\Cpp_Training\cmake_test\build && $(MAKE) $(MAKESILENT) -f lib\CMakeFiles\my_library.dir\build.make lib/CMakeFiles/my_library.dir/module.cpp.i
+.PHONY : module.cpp.i
 
-src/math.s: src/math.cpp.s
-.PHONY : src/math.s
+module.s: module.cpp.s
+.PHONY : module.s
 
 # target to generate assembly for a file
-src/math.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hello_executable.dir\build.make CMakeFiles/Hello_executable.dir/src/math.cpp.s
-.PHONY : src/math.cpp.s
+module.cpp.s:
+	cd /d D:\Code_store\Cpp_Training\cmake_test\build && $(MAKE) $(MAKESILENT) -f lib\CMakeFiles\my_library.dir\build.make lib/CMakeFiles/my_library.dir/module.cpp.s
+.PHONY : module.cpp.s
 
 # Help Target
 help:
@@ -197,14 +161,10 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... Hello_executable
 	@echo ... my_library
-	@echo ... main.obj
-	@echo ... main.i
-	@echo ... main.s
-	@echo ... src/math.obj
-	@echo ... src/math.i
-	@echo ... src/math.s
+	@echo ... module.obj
+	@echo ... module.i
+	@echo ... module.s
 .PHONY : help
 
 
@@ -216,6 +176,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 0
+	cd /d D:\Code_store\Cpp_Training\cmake_test\build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

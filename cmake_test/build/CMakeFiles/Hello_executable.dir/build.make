@@ -109,6 +109,7 @@ Hello_executable_EXTERNAL_OBJECTS =
 Hello_executable.exe: CMakeFiles/Hello_executable.dir/main.cpp.obj
 Hello_executable.exe: CMakeFiles/Hello_executable.dir/src/math.cpp.obj
 Hello_executable.exe: CMakeFiles/Hello_executable.dir/build.make
+Hello_executable.exe: lib/libmy_library.a
 Hello_executable.exe: CMakeFiles/Hello_executable.dir/linklibs.rsp
 Hello_executable.exe: CMakeFiles/Hello_executable.dir/objects1.rsp
 Hello_executable.exe: CMakeFiles/Hello_executable.dir/link.txt

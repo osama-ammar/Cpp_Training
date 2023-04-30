@@ -1,5 +1,7 @@
 #include <iostream>
-#include "math.hpp"
+#include "math.hpp"  //our program is linked to this file by cmake
+
+#include "module.hpp" //our program is linked to this file by cmake
 
 using namespace std;
 
@@ -37,4 +39,9 @@ int main()
     x = sum(4,6);
 
     cout << " Hello I'm make , cmake , makelist......"<<x<<"....."<<G;
+
+    cout<<endl;
+
+    // this function is located inside my_library .... which is a library linked to my code  using cmake
+    wifi_init();
 }
