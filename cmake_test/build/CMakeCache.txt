@@ -245,6 +245,12 @@ HelloWorld_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 HelloWorld_SOURCE_DIR:STATIC=D:/Code_store/Cpp_Training/cmake_test
 
+//No help, variable specified on the command line.
+my_env_variables:UNINITIALIZED=30
+
+//No help, variable specified on the command line.
+my_new_variable:UNINITIALIZED=30
+
 
 ########################
 # INTERNAL cache entries
