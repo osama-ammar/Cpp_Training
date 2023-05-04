@@ -150,6 +150,8 @@ public:
     }
 };
 
+
+//////////////////////////////////////////////////////////////////////////////
 template <class T>
 void print_vector(vector<T> v)
 {
@@ -160,6 +162,8 @@ void print_vector(vector<T> v)
 
     cout << " ; and has size of :" << v.size() << endl;
 }
+///////////////////////////////////////////////////////////////////////////////
+
 
 int main()
 {
@@ -192,8 +196,8 @@ int main()
 
 
 /*
-    int var : num - Copies each element of num to the var variable in each iteration. This is not good for computer memory.
-    int &var : num - Does not copy each element of num to var. Instead, accesses the elements of num directly from num itself. This is more efficient.
+    int var : iterable - Copies each element of num to the var variable in each iteration. This is not good for computer memory.
+    int &var : iterable - Does not copy each element of num to var. Instead, accesses the elements of num directly from num itself. This is more efficient.
 
     Note: If we are not modifying the [array / vector / collection] within the loop, it is better to use the const keyword in range declaration.
 

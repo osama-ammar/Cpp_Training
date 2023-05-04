@@ -9,6 +9,7 @@ set(FilES_VAR
     src/math.cpp )
 # or you can do this 
 set(FilES_VAR "main.cpp" ;  "src/math.cpp" )
+
 #####################################################################################
 #setting c++ standard for this project
 set (CMAKE_CXX_STANDARD 14)
@@ -40,8 +41,7 @@ MESSAGE("path of CMAKE_CURRENT_SOURCE_DIR  is ${CMAKE_CURRENT_SOURCE_DIR}")
 message("path of CMAKE_GENERATOR is ${CMAKE_GENERATOR}")
 
 ####################################################################################################
-
-
+#making executible and including needed files
 
 #making an executible called (Hello_executable) for main.cpp
 #put here executible name and corresponding .cpp files  
@@ -49,6 +49,9 @@ add_executable(Hello_executable  ${FilES_VAR} )
 
 #if your .cpp files (Hello_executable) need files from a directory include this directory .... 
 target_include_directories(Hello_executable PUBLIC  include/  lib/ )
+
+########################################################################
+# Adding a library an linking to it
 
 #cmake will enter this directory which is a library and uses the CMakeLists inside it 
 # ~ cmake inheritance
