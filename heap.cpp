@@ -12,6 +12,8 @@ heap::managing memory on it is manual , unused program memory that can be used w
 		dynamic and large
 		you need to delete unused variables
 
+        SHOULD BE USED WITH  POINTERS BECAUSE ...............
+
 
 
 we cannot control life time in stack but we can do this in heap using new and delete operators.

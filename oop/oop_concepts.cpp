@@ -15,7 +15,7 @@ int Person::order=0;
 
 
 //
-Shape *shapeFactory(char some_char)
+Shape* shapeFactory(char some_char)
 {
     if (some_char == 'r')
     {

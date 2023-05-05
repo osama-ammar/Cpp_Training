@@ -112,6 +112,7 @@ class Teacher : public Person
         {
             this->salary=salary;
         }
+        
         void setSalary(int salary)
         {
             this->salary = salary;
