@@ -1,6 +1,4 @@
 D:/Code_store/Cpp_Training/cmake_test/build/CMakeFiles/Hello_executable.dir
-D:/Code_store/Cpp_Training/cmake_test/build/CMakeFiles/edit_cache.dir
-D:/Code_store/Cpp_Training/cmake_test/build/CMakeFiles/rebuild_cache.dir
+D:/Code_store/Cpp_Training/cmake_test/build/CMakeFiles/ALL_BUILD.dir
+D:/Code_store/Cpp_Training/cmake_test/build/CMakeFiles/ZERO_CHECK.dir
 D:/Code_store/Cpp_Training/cmake_test/build/lib/CMakeFiles/my_library.dir
-D:/Code_store/Cpp_Training/cmake_test/build/lib/CMakeFiles/edit_cache.dir
-D:/Code_store/Cpp_Training/cmake_test/build/lib/CMakeFiles/rebuild_cache.dir

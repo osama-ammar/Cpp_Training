@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.22)
 
-#name of the project
-project(HelloWorld)
+#name of the project and its version
+project(HelloWorld VERSION 11.12)
 
 #we will make a variable (~list) called FilES_VAR that carry .cpp files names as values
 set(FilES_VAR 
@@ -78,3 +78,20 @@ message("my new variable is ${my_new_variable}")
 
 
 ################################################################
+# Configuration file 
+
+set(RELEASE_YEAR "2022")
+
+#generating a configuration file ( my_configuration.h) 
+configure_file(defaultconfig.h.in  defaultconfig.h)
+
+#because my_configuration.h will bw generated inside inside build , we should include PROJECT_BINARY_DIR dir so that our main can see it 
+target_include_directories(Hello_executable PUBLIC  &{PROJECT_BINARY_DIR} )
+
+
+##################################################################
+
+
+
+
+

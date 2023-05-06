@@ -1,7 +1,7 @@
 #include <string>
 #include <iostream>
 using namespace std;
-
+#include <fstream>
 // overloading : functions of same name / but different signature(arguments types & no)
 
 // oveRRiding : functions of SSame name / SSame signature(arguments types & no) / & inheritance occuar
@@ -11,26 +11,40 @@ using namespace std;
 class Validations{
         public:
             static int check_name(string name){
-            // this method returns the index of 1st character in name string that doesn't match any char in the argument string
-            size_t fond_index = name.find_first_not_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ");
+                // this method returns the index of 1st character in name string that doesn't match any char in the argument string
+                size_t fond_index = name.find_first_not_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ");
 
-            // npos is an index and =-1 be default meaning (no match)
-            if (name.length()<=20 && name.length()>=5 && fond_index != std::string::npos)
-            {
-                cout<< "accepted name entered"<< endl;
-                return true;
+                // npos is an index and =-1 be default meaning (no match)
+                if (name.length()<=20 && name.length()>=5 && fond_index != std::string::npos)
+                {
+                    cout<< "accepted name entered"<< endl;
+                    return true;
+                }   
             }   
-        }
 
 
-        static int check_bassword(string password)
-        {
-            if (password.length()<=20 && password.length()>=8 )
+            static int check_bassword(string password)
             {
-                return true;
-            }           
-            cout<<"bassword should be <20 and >8 characters"<<endl;
-        }
+                if (password.length()<=20 && password.length()>=8 )
+                {
+                    return true;
+                }           
+                cout<<"bassword should be <20 and >8 characters"<<endl;
+            }
+
+
+            static void get_file_info ( string filename){
+                ifstream myfile(filename, ios::out | ios::app );
+                string line;
+                if (myfile.is_open())
+                {
+                    while (getline(myfile,line) )
+                    {
+                    cout << line << '\n';
+                    }
+                }
+            }
+
 
 
 };
@@ -148,6 +162,12 @@ class Client : public Person
         Client (string name, int id, string password,double balance) : Person( name,  id,  password)
         {
             this->balance =balance;
+            ofstream myfile;
+            string file_name =name + ".txt";
+            myfile.open("file_name");
+            myfile<<"this fille is for : "<<"\n"<<name<<"\n"<<id<<"\n"<<balance<<endl;
+            myfile.close();
+    
         }
 
         void set_balance (double balance)
@@ -158,6 +178,7 @@ class Client : public Person
         {
             cout<<"your current balance is : "<<this->balance<<endl;
         }
+
 
 
 
