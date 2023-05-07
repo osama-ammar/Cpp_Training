@@ -94,7 +94,7 @@ class Switch {
 
 
 
-class Lamp {
+class Lamp  {
     private:
         Switch* switch;
 
