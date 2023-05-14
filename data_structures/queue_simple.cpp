@@ -9,10 +9,13 @@
 #include <string.h>
 #include <iostream>
 using namespace std;
+#include <queue>
 
+#define queu_size 5
 
-#define size 5
-int queue[size];
+namespace make_a_queu
+{
+int queue[queu_size];
 int front =-1 , rear=-1;
 
 void enqueue(int value);
@@ -22,49 +25,8 @@ int peek();
 
 
 
-
-
-
-
-
-
-
-
-int main(){
-
-    int list[]={1,2,3,4};
-    for (int i:list){
-        enqueue(i);
-    }
-
-    display();
-
-    peek();
-
-    dequeue();
-    dequeue();
-
-    peek();
-
-    display();
-
-
-    return 0;
-}
-
-
-
-
-
-
-
-
-
-
-
-
 void enqueue(int value){
-    if(rear!=size-1){
+    if(rear!=queu_size-1){
         //queue can accept values
         queue[rear+1]=value;
         rear++;
@@ -121,4 +83,55 @@ void display(){
             }
         }
 }
+
+
+
+
+}
+
+
+void show_queue (queue<int> q)
+{
+    while (!q.empty())
+    {
+        cout << q.front() << " ";
+        q.pop();
+    }
+    cout << endl;
+}
+
+
+
+
+
+
+
+int main(){
+
+    // int list[]={1,2,3,4};
+    // for (int i:list){
+    //     enqueue(i);
+    // }
+    // display();
+    // peek();
+    // dequeue();
+    // dequeue();
+    // peek();
+    // display();
+
+    queue<int> my_queue;
+    for (int i=0 ; i<20;i++)
+        my_queue.push(i);
+
+    queue<int> her_queue;
+    for (int i=10 ; i<50;i+=10)
+        her_queue.push(i);
+
+        
+    show_queue(her_queue);
+
+
+    return 0;
+}
+
 

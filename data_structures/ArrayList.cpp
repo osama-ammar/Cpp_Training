@@ -16,13 +16,12 @@ Array List :
             Removal : Bad
             Access time : fixed (retreive time) h+i*c
             size : fixed
-
             ex ( vector)
 
 
 
-
-
+            access time of Array is  O(n)
+            search  in Array is  O(n) as in linear search or O(logn) as in binary search
 
 */
 template <class T>

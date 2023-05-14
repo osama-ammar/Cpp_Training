@@ -1,6 +1,24 @@
 
 
 /*
+Time complexity : relation between running time and code size
+
+        O (1) : best case   ex(Hash table)
+
+        O (log(n)) :good    ex(Tree , array-binary search)
+
+        O (n) : average     ex(linked list , array-linear search)
+
+        O (n logn) : Bad 
+
+        O (n*) : worst      ex()
+                
+
+
+
+
+
+
 
 Asymptotic notations are the mathematical notations used to describe the running time of an algorithm when the input tends towards a particular value or a limiting value
 
