@@ -4,12 +4,17 @@
 
 
 /*
-Binary search tree : AN EFFECTIVE DATASTRUCTURE FOR searc
+Binary search tree : AN EFFECTIVE DATASTRUCTURE FOR search
+
                     - composed of nodes each node not contain more than 2 sons 
                     - the value in Rt son is greater than parent node
                     - the value in Lt son is less than parent node
                     - search time complexity - log2 (n)
                     -each value in BST is unique ( no repeated nodes exist)
+
+
+                Disadvantages : when tree is unbalanced , this occuers when adding
+                                nodes occuers in fixed direction () . thus converting the tree into linked list
 
 
 */
@@ -77,7 +82,7 @@ class BST {
                 return;
             }
 
-            // otherwise you can add anew value but let's locate the proper position to add it
+            // otherwise you can add a new value but let's locate the proper position to add it
             // make a parser pointer
             Node* p = root;
             while (true) 
@@ -96,19 +101,55 @@ class BST {
                 }
             }
 
+            //putting our new node in the proper place
             if (value > p->value)
             {
-                
+                p->right=n;
+            }else{
+                p->left=n;
             }
 
 
+        }
+
+        // deep first search .. ( based on recursions)
+        void DFS (Node* p)
+        {
+
+            if (p==nullptr) return;
+            std::cout<<p->value<<"-->";
+
+            DFS(p->left);
+            DFS(p->right);
+
+        }
+
+        void print(){
+            DFS(root);
         }
 
 
 
 
 
+
+
 };
+
+int main(){
+
+
+
+
+
+
+    return 0;
+}
+
+
+
+
+
 
 
 
