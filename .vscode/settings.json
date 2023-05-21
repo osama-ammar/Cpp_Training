@@ -49,6 +49,11 @@
         "xstddef": "cpp",
         "xtr1common": "cpp",
         "fstream": "cpp",
-        "stack": "cpp"
+        "stack": "cpp",
+        "algorithm": "cpp",
+        "array": "cpp",
+        "deque": "cpp",
+        "list": "cpp",
+        "queue": "cpp"
     }
 }

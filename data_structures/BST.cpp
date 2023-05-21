@@ -1,7 +1,7 @@
 
 #include <iostream>
 #include <string>
-
+#include <array>
 /*
 Binary search tree : AN EFFECTIVE DATASTRUCTURE FOR search
 
@@ -17,6 +17,15 @@ Binary search tree : AN EFFECTIVE DATASTRUCTURE FOR search
 
 
 */
+
+struct node_info {
+    Node*  node;
+    Node*  parent;
+    std::string direction;
+
+};
+
+
 
 class Node
 {
@@ -42,8 +51,9 @@ public:
     }
 };
 
-// class composition ???????
 
+
+// class composition ???????
 class BST
 {
 private:
@@ -65,6 +75,8 @@ public:
         }
         return false;
     }
+
+
 
     void add_value(int value)
     {
@@ -89,17 +101,18 @@ public:
             if (value > p->value)
             {
                 if (p->right == nullptr)
-                    break;
+                
                 p = p->right;
+                    break;
             }
             else
             {
-                if (p->right == nullptr)
-                    break;
+                if (p->left == nullptr)
+                
                 p = p->left;
+                    break;
             }
         }
-
         // putting our new node in the proper place
         if (value > p->value)
         {
@@ -112,7 +125,23 @@ public:
         std::cout<< " a new value is added"<< std::endl;
     }
 
-    // deep first search .. ( based on recursions)
+    // return a pointer that points to the required value in the tree
+    Node* move_to_value(int value)
+    {
+        if (!value_exist(value))
+            {
+            std::cout<<"value doesn't in the tree"<<std::endl;
+            return;
+            }
+
+        Node* p = root;
+
+        
+    }
+
+
+
+    // (DFS)  deep first search Algorithm .. ( based on recursions)
     void DFS(Node *p)
     {
 
@@ -124,10 +153,104 @@ public:
         DFS(p->right);
     }
 
+
+
+    // function overloading ?
+    // search for a value and return a pointer that points to it and another pointer points to its parent
+    node_info  find_value(Node * p,int value,std::string direction,Node*  parent)
+    {
+        //what about this , to avoid redefining parent in every call
+
+        static node_info node_struct;
+
+        //
+        if (p == nullptr)
+        {
+            std::cout << "empty root" << std::endl;
+            return;
+        }
+
+        if (p->value == value)
+        {
+            std::cout<<"value found"<<std::endl;
+            node_struct.node= p;
+            node_struct.parent=parent;
+            node_struct.direction= direction;
+            return node_struct;
+        }
+
+        if (value > p->value)
+        {
+            parent=p;
+            p=p->right;
+            direction="right";
+        }
+        else
+        { 
+            parent=p;
+            p=p->left;
+            direction="left";
+        }
+        find_value(p,value,direction,parent);
+
+    }
+
     void print()
     {
         DFS(root);
     }
+
+
+
+    /* when deleting we have here 5 cases:
+    - the node you want to delete doesn't exist : do nothing 
+    - the node has no sons : make her parent points to nullptr
+    - the node has only right son : make her parent points this  son
+    - the node has only left son : make her parent points this  son
+    - the node has right and left son : put a new value inside this node (from right left direction or vice verse)
+    
+    */
+    void delete_node (int value){
+
+        if (!value_exist(value))
+            return;
+
+        Node* p ;
+        static Node* parent;
+        node_info node_struct;
+        static std::string direction;
+
+        //this struct carries the node, its parent , and we although have its direction
+        node_struct= find_value(root,value,direction,parent);
+
+
+
+        if (p->right==nullptr && p->left==nullptr)
+        {
+            parent.right=nullptr;
+        }
+
+        if (p->right!=nullptr)
+        {
+
+        }
+
+        if (p->left!=nullptr )
+        {
+
+        }
+        if (p->right!=nullptr && p->left!=nullptr)
+        {
+
+        }
+
+
+
+
+
+
+
+
 };
 
 int main()
@@ -139,10 +262,10 @@ int main()
     tree.add_value(15);
     tree.add_value(7);
     tree.add_value(27);
-    tree.add_value(5);
+    tree.add_value(12);
     tree.add_value(44);
 
-    tree.print();
+    //tree.print();
 
     return 0;
 }
