@@ -3,7 +3,7 @@
 #include <string>
 #include <array>
 /*
-Binary search tree : AN EFFECTIVE DATASTRUCTURE FOR search
+Binary search tree (set in stl) : AN EFFECTIVE DATASTRUCTURE FOR search
 
                     - composed of nodes each node not contain more than 2 sons
                     - the value in Rt son is greater than parent node
@@ -19,6 +19,7 @@ Binary search tree : AN EFFECTIVE DATASTRUCTURE FOR search
                 -if we are going to delete a node that have 2 sons : the best value to put in its place is (اكبر صغير او اصغر كبير)
 
 
+                -DFS  algorithm depends on recursion
 
 
 */
