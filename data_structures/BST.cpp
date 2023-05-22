@@ -16,6 +16,11 @@ Binary search tree : AN EFFECTIVE DATASTRUCTURE FOR search
                                 nodes occuers in fixed direction () . thus converting the tree into linked list
 
 
+                -if we are going to delete a node that have 2 sons : the best value to put in its place is (اكبر صغير او اصغر كبير)
+
+
+
+
 */
 
 struct node_info {
@@ -222,33 +227,33 @@ public:
 
         //this struct carries the node, its parent , and we although have its direction
         node_struct= find_value(root,value,direction,parent);
+        
 
 
 
         if (p->right==nullptr && p->left==nullptr)
         {
-            parent.right=nullptr;
+            node_struct.parent=nullptr;
         }
+
 
         if (p->right!=nullptr)
         {
-
+            node_struct.parent->right=p->right;
         }
+
 
         if (p->left!=nullptr )
         {
-
+            node_struct.parent->left=p->left;
         }
+
+
         if (p->right!=nullptr && p->left!=nullptr)
         {
-
+            //the smallest big
+            node_struct.node->value=p->right->left->value;
         }
-
-
-
-
-
-
 
 
 };
