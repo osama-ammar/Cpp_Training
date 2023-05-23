@@ -1,7 +1,9 @@
 
+
 #include <iostream>
 #include <string>
 #include <array>
+#include <queue>
 /*
 Binary search tree (set in stl) : AN EFFECTIVE DATASTRUCTURE FOR search
 
@@ -23,15 +25,6 @@ Binary search tree (set in stl) : AN EFFECTIVE DATASTRUCTURE FOR search
 
 
 */
-
-struct node_info {
-    Node*  node;
-    Node*  parent;
-    std::string direction;
-
-};
-
-
 
 class Node
 {
@@ -57,7 +50,12 @@ public:
     }
 };
 
-
+struct node_info
+{
+    Node *node;
+    Node *parent;
+    std::string direction;
+};
 
 // class composition ???????
 class BST
@@ -82,13 +80,14 @@ public:
         return false;
     }
 
-
-
     void add_value(int value)
     {
-        if (value_exist(value))
-            return;
 
+        if (value_exist(value))
+        {
+            std::cout<<"value already exists "<<std::endl;
+            return;
+        }
         // creating a new node
         Node *n = new Node(value, nullptr, nullptr);
 
@@ -96,29 +95,32 @@ public:
         if (root == nullptr)
         {
             root = n;
+            std::cout<<"tree is empty , first node is added "<<std::endl;
             return;
         }
 
         // otherwise you can add a new value but let's locate the proper position to add it
         // make a parser pointer
         Node *p = root;
+        std::cout << " 3=========================" << std::endl;
         while (true)
         {
             if (value > p->value)
             {
                 if (p->right == nullptr)
-                
-                p = p->right;
-                    break;
+                    std::cout << " 1=========================" << std::endl;
+                    p = p->right;
+                break;
             }
             else
             {
                 if (p->left == nullptr)
-                
-                p = p->left;
-                    break;
+                    std::cout << "2=========================" << std::endl;
+                    p = p->left;
+                break;
             }
         }
+        std::cout << " 3=========================" << std::endl;
         // putting our new node in the proper place
         if (value > p->value)
         {
@@ -128,44 +130,33 @@ public:
         {
             p->left = n;
         }
-        std::cout<< " a new value is added"<< std::endl;
+        std::cout << " a new value is added" << std::endl;
     }
 
     // return a pointer that points to the required value in the tree
-    Node* move_to_value(int value)
+    Node *move_to_value(int value)
     {
+        Node *p = root;
+
         if (!value_exist(value))
-            {
-            std::cout<<"value doesn't in the tree"<<std::endl;
-            return;
-            }
-
-        Node* p = root;
-
-        
+        {
+            std::cout << "value doesn't in the tree" << std::endl;
+            return p;
+        }
     }
 
+    // will be defined later
+    //  (DFS)  deep first search Algorithm .. ( based on recursions)
+    void DFS(Node *p);
 
-
-    // (DFS)  deep first search Algorithm .. ( based on recursions)
-    void DFS(Node *p)
-    {
-
-        if (p == nullptr)
-            return;
-        std::cout << p->value << "-->";
-
-        DFS(p->left);
-        DFS(p->right);
-    }
-
-
+    //  breadest first search algorithm (push,print,add right and left, pop)depends on queue
+    void BFS(Node *n);
 
     // function overloading ?
     // search for a value and return a pointer that points to it and another pointer points to its parent
-    node_info  find_value(Node * p,int value,std::string direction,Node*  parent)
+    node_info find_value(Node *p, int value, std::string direction, Node *parent)
     {
-        //what about this , to avoid redefining parent in every call
+        // what about this , to avoid redefining parent in every call
 
         static node_info node_struct;
 
@@ -173,32 +164,31 @@ public:
         if (p == nullptr)
         {
             std::cout << "empty root" << std::endl;
-            return;
+            return node_struct;
         }
 
         if (p->value == value)
         {
-            std::cout<<"value found"<<std::endl;
-            node_struct.node= p;
-            node_struct.parent=parent;
-            node_struct.direction= direction;
+            std::cout << "value found" << std::endl;
+            node_struct.node = p;
+            node_struct.parent = parent;
+            node_struct.direction = direction;
             return node_struct;
         }
 
         if (value > p->value)
         {
-            parent=p;
-            p=p->right;
-            direction="right";
+            parent = p;
+            p = p->right;
+            direction = "right";
         }
         else
-        { 
-            parent=p;
-            p=p->left;
-            direction="left";
+        {
+            parent = p;
+            p = p->left;
+            direction = "left";
         }
-        find_value(p,value,direction,parent);
-
+        find_value(p, value, direction, parent);
     }
 
     void print()
@@ -206,72 +196,47 @@ public:
         DFS(root);
     }
 
-
-
     /* when deleting we have here 5 cases:
-    - the node you want to delete doesn't exist : do nothing 
+    - the node you want to delete doesn't exist : do nothing
     - the node has no sons : make her parent points to nullptr
     - the node has only right son : make her parent points this  son
     - the node has only left son : make her parent points this  son
     - the node has right and left son : put a new value inside this node (from right left direction or vice verse)
-    
+
     */
-    void delete_node (int value){
+    void delete_node(int value)
+    {
 
         if (!value_exist(value))
             return;
 
-        Node* p ;
-        static Node* parent;
+        Node *p;
+        static Node *parent;
         node_info node_struct;
         static std::string direction;
 
-        //this struct carries the node, its parent , and we although have its direction
-        node_struct= find_value(root,value,direction,parent);
-        
+        // this struct carries the node, its parent , and we although have its direction
+        node_struct = find_value(root, value, direction, parent);
 
-
-
-        if (p->right==nullptr && p->left==nullptr)
+        if (p->right == nullptr && p->left == nullptr)
         {
-            node_struct.parent=nullptr;
+            node_struct.parent = nullptr;
         }
 
-
-        if (p->right!=nullptr)
+        if (p->right != nullptr)
         {
-            node_struct.parent->right=p->right;
+            node_struct.parent->right = p->right;
         }
 
-
-        if (p->left!=nullptr )
+        if (p->left != nullptr)
         {
-            node_struct.parent->left=p->left;
+            node_struct.parent->left = p->left;
         }
 
-
-        if (p->right!=nullptr && p->left!=nullptr)
+        if (p->right != nullptr && p->left != nullptr)
         {
-            //the smallest big
-            node_struct.node->value=p->right->left->value;
+            // the smallest big
+            node_struct.node->value = p->right->left->value;
         }
-
-
+    }
 };
-
-int main()
-{
-
-    BST tree;
-    tree.add_value(10);
-    tree.add_value(5);
-    tree.add_value(15);
-    tree.add_value(7);
-    tree.add_value(27);
-    tree.add_value(12);
-    tree.add_value(44);
-
-    //tree.print();
-
-    return 0;
-}

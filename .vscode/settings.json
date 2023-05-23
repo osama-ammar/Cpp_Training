@@ -54,6 +54,8 @@
         "array": "cpp",
         "deque": "cpp",
         "list": "cpp",
-        "queue": "cpp"
+        "queue": "cpp",
+        "set": "cpp",
+        "xtree": "cpp"
     }
 }
