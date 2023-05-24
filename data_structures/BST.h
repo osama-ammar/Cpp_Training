@@ -70,24 +70,30 @@ public:
         while (p != nullptr)
         {
             if (p->value == value)
+            {
+                std::cout<<"value already exists "<<std::endl;
                 return true;
+            }
 
-            if (value > p->value)
-                p == p->right;
-            else
-                p == p->left;
+            if (value > p->value && p->right != nullptr)
+                p = p->right;
+            if (value < p->value && p->left != nullptr)
+                p = p->left;
         }
         return false;
     }
 
+
+
     void add_value(int value)
     {
 
-        if (value_exist(value))
-        {
-            std::cout<<"value already exists "<<std::endl;
-            return;
-        }
+        // if (value_exist(value))
+        // {
+        //     std::cout<<"value already exists "<<std::endl;
+        //     return;
+        // }
+
         // creating a new node
         Node *n = new Node(value, nullptr, nullptr);
 
@@ -102,25 +108,25 @@ public:
         // otherwise you can add a new value but let's locate the proper position to add it
         // make a parser pointer
         Node *p = root;
-        std::cout << " 3=========================" << std::endl;
+        std::cout << " 1=========================" << std::endl;
         while (true)
         {
             if (value > p->value)
             {
-                if (p->right == nullptr)
-                    std::cout << " 1=========================" << std::endl;
-                    p = p->right;
-                break;
+                if (p->right == nullptr)break;
+                std::cout << " 2=========================" << std::endl;
+                p = p->right;
             }
             else
             {
-                if (p->left == nullptr)
-                    std::cout << "2=========================" << std::endl;
-                    p = p->left;
-                break;
+                if (p->left == nullptr)break;
+                std::cout << " 3=========================" << std::endl;
+                p = p->left;
             }
         }
-        std::cout << " 3=========================" << std::endl;
+
+
+        std::cout << " 4=========================" << std::endl;
         // putting our new node in the proper place
         if (value > p->value)
         {
@@ -130,8 +136,10 @@ public:
         {
             p->left = n;
         }
-        std::cout << " a new value is added" << std::endl;
+        std::cout << " a new value is added tata" << std::endl;
     }
+
+
 
     // return a pointer that points to the required value in the tree
     Node *move_to_value(int value)
@@ -181,12 +189,14 @@ public:
             parent = p;
             p = p->right;
             direction = "right";
+            std::cout << "riiiiiiiight"<<std::endl;
         }
         else
         {
             parent = p;
             p = p->left;
             direction = "left";
+            std::cout << "leeeeft"<<std::endl;
         }
         find_value(p, value, direction, parent);
     }
@@ -215,8 +225,10 @@ public:
         node_info node_struct;
         static std::string direction;
 
+
         // this struct carries the node, its parent , and we although have its direction
         node_struct = find_value(root, value, direction, parent);
+        std::cout << "deleeeeeeeted" << std::endl;
 
         if (p->right == nullptr && p->left == nullptr)
         {
@@ -238,5 +250,7 @@ public:
             // the smallest big
             node_struct.node->value = p->right->left->value;
         }
+
+
     }
 };

@@ -58,7 +58,9 @@ int main()
     tree.add_value(12);
     tree.add_value(44);
 
-    // tree.print();
+    tree.delete_node(7);
+
+    tree.print();
 
     return 0;
 }

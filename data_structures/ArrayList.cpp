@@ -16,7 +16,8 @@ Array List :
             Removal : Bad
             Access time : fixed (retreive time) h+i*c
             size : fixed
-            ex ( vector)
+            ex ( vector) :Vectors are same as dynamic arrays with the ability to resize itself automatically when an element 
+                            is inserted or deleted, with their storage being handled automatically by the container
 
 
 
