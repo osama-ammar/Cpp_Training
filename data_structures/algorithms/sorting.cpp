@@ -15,7 +15,7 @@
 using namespace std;
 
 // Bubble sort in C++ --------------------------------------------------------------------------------------------
-// avg Time complexity = O(n2)
+// avg Time complexity = O(n2) , brute force
 // Space complexity = O(1)
 //
 
@@ -48,6 +48,23 @@ void bubbleSort(int array[], int size)
                 // are not in the intended order
                 swap(&array[i + 1], &array[i]);
             }
+        }
+    }
+}
+//////////////////////////////////////////////////////////
+//insertion sort ... like bubble sort but it quit un needed loops, if array is sorted-> break
+void insertion_Sort(int array[], int size)
+{
+
+    // loop to access each array element
+    for (int step = 0; step < size; ++step)
+    {
+        // loop to compare array elements
+        //swap only if 
+        for (int j = step; array[j+1]<array[j]&&j>=0; j--)
+        {
+                // swapping elements if elements are not in the intended order
+                swap(&array[j + 1], &array[j]);
         }
     }
 }

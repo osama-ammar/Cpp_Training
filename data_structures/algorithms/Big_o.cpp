@@ -16,7 +16,14 @@ Time complexity : relation between running time and code size
 
 
 
-
+    when to select a specific data structure over several ones:
+    based on :
+        1-
+        2-
+        3-
+        4-
+        5-
+        
 
 
 
