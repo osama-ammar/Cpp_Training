@@ -28,6 +28,12 @@ Algorithms paradigms : almost any algo can be categorized as 1 or more of 5 para
                                         ex (Faponanci series)
 
 
+
+    Recursion : the function call itself 
+                - you should have base case = stop case (when recursion stops?)
+                -
+
+
 */
 
 // solving fibonanci problem by recursion

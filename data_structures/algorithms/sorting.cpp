@@ -60,7 +60,7 @@ void insertion_Sort(int array[], int size)
     for (int step = 0; step < size; ++step)
     {
         // loop to compare array elements
-        //swap only if 
+        //swap only if array[j+1]<array[j] other wise skipand save your time and effort
         for (int j = step; array[j+1]<array[j]&&j>=0; j--)
         {
                 // swapping elements if elements are not in the intended order
@@ -146,74 +146,78 @@ void selectionSort(int array[], int size)
 //  Space complexity = O(n)
 
 // Merge two subarrays L and M into arr
-void merge(int arr[], int p, int q, int r)
+void merge_sort(int arr[], int left, int mid, int right)
 {
+    //devide
+    // Create L ← A[left..mid] and M ← A[mid+1..r]
+    int lsize = mid - left + 1;
+    int rsize = right - mid;
 
-    // Create L ← A[p..q] and M ← A[q+1..r]
-    int n1 = q - p + 1;
-    int n2 = r - q;
+    int *left_arr=new int[lsize];
+    int *right_arr=new int[rsize];
 
-    int L[n1] = {};
-    int M[n2] = {};
+    for (int i = 0; i < lsize; i++)
+        left_arr[i] = arr[left + i];
+    for (int j = 0; j < rsize; j++)
+        right_arr[j] = arr[mid + 1 + j];
 
-    for (int i = 0; i < n1; i++)
-        L[i] = arr[p + i];
-    for (int j = 0; j < n2; j++)
-        M[j] = arr[q + 1 + j];
-
+    // Merge
     // Maintain current index of sub-arrays and main array
-    int i, j, k;
-    i = 0;
-    j = 0;
-    k = p;
+    int right_index, left_index, main_index;
+    right_index = 0;      //right_index
+    left_index = 0;      //left_index
+    main_index = left;   //main array index
 
-    // Until we reach either end of either L or M, pick larger among
+    // Until we reach either end of either L or M, picmain_index larger among
     // elements L and M and place them in the correct position at A[p..r]
-    while (i < n1 && j < n2)
+    while (right_index < lsize && left_index < rsize)
     {
-        if (L[i] <= M[j])
+        if (left_arr[right_index] <= right_arr[left_index])
         {
-            arr[k] = L[i];
-            i++;
+            arr[main_index] = left_arr[right_index];
+            right_index++;
         }
         else
         {
-            arr[k] = M[j];
-            j++;
+            arr[main_index] = right_arr[left_index];
+            left_index++;
         }
-        k++;
+        main_index++;
     }
 
     // When we run out of elements in either L or M,
-    // pick up the remaining elements and put in A[p..r]
-    while (i < n1)
+    // picmain_index up the remaining elements and put in A[p..r]
+    while (right_index < lsize)
     {
-        arr[k] = L[i];
-        i++;
-        k++;
+        arr[main_index] = left_arr[right_index];
+        right_index++;
+        main_index++;
     }
 
-    while (j < n2)
+    while (left_index < rsize)
     {
-        arr[k] = M[j];
-        j++;
-        k++;
+        arr[main_index] = right_arr[left_index];
+        left_index++;
+        main_index++;
     }
 }
-
+//apllay recursion
 // Divide the array into two subarrays, sort them and merge them
-void mergeSort(int arr[], int l, int r)
+void mergeSort_algo(int arr[], int left, int right)
 {
-    if (l < r)
+    // if left >= righ merging is finished
+    if (left >= right) return;
+
+    if (left < right)
     {
         // m is the point where the array is divided into two subarrays
-        int m = l + (r - l) / 2;
+        int mid = left + (right - left) / 2;
 
-        mergeSort(arr, l, m);
-        mergeSort(arr, m + 1, r);
+        mergeSort_algo(arr, left, mid);
+        mergeSort_algo(arr, mid + 1, right);
 
         // Merge the sorted subarrays
-        merge(arr, l, m, r);
+        merge_sort(arr, left, mid, right);
     }
 }
 
