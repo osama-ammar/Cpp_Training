@@ -2,8 +2,20 @@
 #include <iostream>
 using namespace std;
 #include <fstream>
-// overloading : functions of same name / but different signature(arguments types & no)
 
+/*
+in this project, we will create a bank system and apply oop and SOLID design concepts
+
+
+
+*/
+
+
+
+
+
+
+// overloading : functions of same name / but different signature(arguments types & no)
 // oveRRiding : functions of SSame name / SSame signature(arguments types & no) / & inheritance occuar
 
 
@@ -50,7 +62,7 @@ class Validations{
 };
 
 
-
+// 
 class Person 
 {
     private: // type here parameters that will be inheritted , can be used in parent  only
@@ -218,6 +230,7 @@ class Client : public Person
                 cout << "amount cannot be sent" <<endl;
                 return balance;
             }
+        }
 
 
 };

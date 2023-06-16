@@ -47,7 +47,7 @@ int fib(int x)
         return fib(x - 1) + fib(x - 2);
 }
 
-// an array used to store calc of dybmaic programming algotirhm
+// an array used to store calc of dynmaic programming algotirhm
 int fib_arr (int x) {
 
     const int var =const(x);

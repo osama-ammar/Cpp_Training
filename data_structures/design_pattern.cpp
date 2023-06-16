@@ -56,7 +56,7 @@ class Setting
 
 
 /*
-to apply sigleton pattern we will :
+to apply singleton pattern we will :
             1- make private constructor
             2- make private object
             3- make public method
