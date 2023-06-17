@@ -169,23 +169,39 @@ class Client : public Person
 {
     private :
         double balance;
+        static int count;
 
     public:
         Client (string name, int id, string password,double balance) : Person( name,  id,  password)
         {
             this->balance =balance;
+            this->count +=1;
+
+            
             ofstream myfile;
             string file_name =name + ".txt";
-            myfile.open("file_name");
-            myfile<<"this fille is for : "<<"\n"<<name<<"\n"<<id<<"\n"<<balance<<endl;
+            // making a txt file an append text in it
+            myfile.open(file_name, std::ios_base::app);
+            myfile<<"this fille is for : "<<name<<"\n"<<"id : "<<id<<"\n"<<"balance : "<<balance<<endl;
             myfile.close();
-    
         }
+
 
         void set_balance (double balance)
         {
             this->balance = balance;
         }
+
+        void update_balance_file(long new_balance)
+        {
+            ofstream myfile;
+            // string file_name =name + ".txt";
+            // // making a txt file an append text in it
+            // myfile.open(file_name, std::ios_base::app);
+            // myfile<<"this fille is for : "<<name<<"\n"<<"id : "<<id<<"\n"<<"balance : "<<balance<<endl;
+            // myfile.close();
+        }
+
         void check_balance ()
         {
             cout<<"your current balance is : "<<this->balance<<endl;
@@ -250,6 +266,22 @@ class Employee : public Person
             this->salary = salary;
         }
 
+        //getting information about the client from  a file
+        void get_client_info(Client &client)
+        {
+            string client_name = client.getName();
+            fstream client_file ;
+            client_file.open(client_name+".txt", ios::in);
+            if (client_file.is_open())
+            {
+                std::string line ;
+                while (getline(client_file , line))
+                {
+                    std::cout << line<<"\n";
+                }
+            }
+            client_file.close();
+        }
 
 
 };
