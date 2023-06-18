@@ -1,3 +1,5 @@
 this fille is for : koko
-id : 123
-balance : 3000
+id : 34123
+balance : 5000
+current salary : 3000
+min salary : 3455
