@@ -11,6 +11,7 @@
 class DataSourceInterface
 {
     public :
+        vector<Client> clients_vector;
 
         virtual void addClient(Client new_client )
             {
@@ -71,8 +72,8 @@ class DataSourceInterface
 
 
 virtual vector<Client> getAllClients( Person &client){
-    vector<Client> clients;
 
+    this->clients_vector.insert(client);
     string person_name = client.getName();
     fstream clients_file;
     clients_file.open("clients.txt", ios::in);
