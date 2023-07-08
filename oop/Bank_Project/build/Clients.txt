@@ -1,0 +1,12 @@
+this fille is for : osama
+id : 75123
+balance : 3000
+current salary : 12222
+min salary : 12222
+===================================================
+this fille is for : koko
+id : 34123
+balance : 3000
+current salary : 3455
+min salary : 3455
+===================================================

@@ -1,7 +1,12 @@
+
+#ifndef HEADER_FILE_H
+#define HEADER_FILE_H
 #include <string>
 #include <iostream>
 using namespace std;
 #include <fstream>
+//#include "defaultconfig.h"
+
 
 /*
 in this project, we will create a bank system and apply oop and SOLID design concepts
@@ -161,7 +166,7 @@ public: // can be used anywhere
     {
         string person_name = client.getName();
         fstream client_file;
-        person_file.open(person_name + ".txt", ios::in);
+        person_file.open(DATA_PATH + person_name + ".txt", ios::in);
         if (person_file.is_open())
         {
             std::string line;
@@ -186,7 +191,8 @@ public: // can be used anywhere
         ofstream myfile;
         string file_name = this->getName() + ".txt";
         // making a txt file an append text in it append(std::ios_base::app) update(ios::in)
-        myfile.open(file_name);
+        string data_path =std::to_string(DATA_PATH);
+        myfile.open(data_path + file_name);
         myfile << "this fille is for : "
                << this->getName() << "\n"
                << "id : " << this->getId() << "\n"
@@ -301,6 +307,17 @@ public:
     }
 
 
+    void  add_client(Client& client){};
+
+    Client* search_id(int id){};
+
+    void list_all_clients(){};
+
+    void view_info(){};
+    
+    void edit_client_info(int id, string name, string password, double balance){};
+
+
     int get_balance()
     {
         return this->balance;
@@ -337,10 +354,30 @@ public:
     }
 
 
-
-
     void set_employee_salary(Employee *employee, double salary)
     {
         employee->set_salary(salary);
     }
+
+
+    void  add_emplyee(Employee& employee){};
+
+    Employee* search_id(int id){};
+
+    void list_all_employees(){};
+
+    void view_info(){};
+    
+    void edit_employee_info(int id, string name, string password, double balance){};
+
+
+    int get_balance()
+    {
+        return this->balance;
+    }
+
+
+
+
 };
+#endif

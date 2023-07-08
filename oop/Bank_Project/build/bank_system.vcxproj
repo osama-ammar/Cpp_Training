@@ -86,7 +86,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\Code_store\Cpp_Training\oop\Bank_Project\include;D:\Code_store\Cpp_Training\oop\Bank_Project\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Code_store\Cpp_Training\oop\Bank_Project\include;D:\Code_store\Cpp_Training\oop\Bank_Project\lib;D:\Code_store\Cpp_Training\oop\Bank_Project\&amp;{PROJECT_BINARY_DIR};%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -97,15 +97,15 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <UseFullPaths>false</UseFullPaths>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;DATA_PATH;MY_PATH=D:/Code_store/Cpp_Training/oop/Bank_Project/data;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\Code_store\Cpp_Training\oop\Bank_Project\include;D:\Code_store\Cpp_Training\oop\Bank_Project\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;DATA_PATH;MY_PATH=D:/Code_store/Cpp_Training/oop/Bank_Project/data;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Code_store\Cpp_Training\oop\Bank_Project\include;D:\Code_store\Cpp_Training\oop\Bank_Project\lib;D:\Code_store\Cpp_Training\oop\Bank_Project\&amp;{PROJECT_BINARY_DIR};%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>D:\Code_store\Cpp_Training\oop\Bank_Project\include;D:\Code_store\Cpp_Training\oop\Bank_Project\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Code_store\Cpp_Training\oop\Bank_Project\include;D:\Code_store\Cpp_Training\oop\Bank_Project\lib;D:\Code_store\Cpp_Training\oop\Bank_Project\&amp;{PROJECT_BINARY_DIR};%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -128,7 +128,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\Code_store\Cpp_Training\oop\Bank_Project\include;D:\Code_store\Cpp_Training\oop\Bank_Project\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Code_store\Cpp_Training\oop\Bank_Project\include;D:\Code_store\Cpp_Training\oop\Bank_Project\lib;D:\Code_store\Cpp_Training\oop\Bank_Project\&amp;{PROJECT_BINARY_DIR};%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>Sync</ExceptionHandling>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
@@ -137,17 +137,17 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <UseFullPaths>false</UseFullPaths>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;DATA_PATH;NDEBUG;MY_PATH=D:/Code_store/Cpp_Training/oop/Bank_Project/data;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
       <DebugInformationFormat>
       </DebugInformationFormat>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\Code_store\Cpp_Training\oop\Bank_Project\include;D:\Code_store\Cpp_Training\oop\Bank_Project\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;DATA_PATH;NDEBUG;MY_PATH=D:/Code_store/Cpp_Training/oop/Bank_Project/data;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Code_store\Cpp_Training\oop\Bank_Project\include;D:\Code_store\Cpp_Training\oop\Bank_Project\lib;D:\Code_store\Cpp_Training\oop\Bank_Project\&amp;{PROJECT_BINARY_DIR};%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>D:\Code_store\Cpp_Training\oop\Bank_Project\include;D:\Code_store\Cpp_Training\oop\Bank_Project\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Code_store\Cpp_Training\oop\Bank_Project\include;D:\Code_store\Cpp_Training\oop\Bank_Project\lib;D:\Code_store\Cpp_Training\oop\Bank_Project\&amp;{PROJECT_BINARY_DIR};%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -170,7 +170,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\Code_store\Cpp_Training\oop\Bank_Project\include;D:\Code_store\Cpp_Training\oop\Bank_Project\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Code_store\Cpp_Training\oop\Bank_Project\include;D:\Code_store\Cpp_Training\oop\Bank_Project\lib;D:\Code_store\Cpp_Training\oop\Bank_Project\&amp;{PROJECT_BINARY_DIR};%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>Sync</ExceptionHandling>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
@@ -179,17 +179,17 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <UseFullPaths>false</UseFullPaths>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;DATA_PATH;NDEBUG;MY_PATH=D:/Code_store/Cpp_Training/oop/Bank_Project/data;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
       <DebugInformationFormat>
       </DebugInformationFormat>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\Code_store\Cpp_Training\oop\Bank_Project\include;D:\Code_store\Cpp_Training\oop\Bank_Project\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;DATA_PATH;NDEBUG;MY_PATH=D:/Code_store/Cpp_Training/oop/Bank_Project/data;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Code_store\Cpp_Training\oop\Bank_Project\include;D:\Code_store\Cpp_Training\oop\Bank_Project\lib;D:\Code_store\Cpp_Training\oop\Bank_Project\&amp;{PROJECT_BINARY_DIR};%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>D:\Code_store\Cpp_Training\oop\Bank_Project\include;D:\Code_store\Cpp_Training\oop\Bank_Project\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Code_store\Cpp_Training\oop\Bank_Project\include;D:\Code_store\Cpp_Training\oop\Bank_Project\lib;D:\Code_store\Cpp_Training\oop\Bank_Project\&amp;{PROJECT_BINARY_DIR};%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -212,7 +212,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\Code_store\Cpp_Training\oop\Bank_Project\include;D:\Code_store\Cpp_Training\oop\Bank_Project\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Code_store\Cpp_Training\oop\Bank_Project\include;D:\Code_store\Cpp_Training\oop\Bank_Project\lib;D:\Code_store\Cpp_Training\oop\Bank_Project\&amp;{PROJECT_BINARY_DIR};%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -222,15 +222,15 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <UseFullPaths>false</UseFullPaths>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;DATA_PATH;NDEBUG;MY_PATH=D:/Code_store/Cpp_Training/oop/Bank_Project/data;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\Code_store\Cpp_Training\oop\Bank_Project\include;D:\Code_store\Cpp_Training\oop\Bank_Project\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;DATA_PATH;NDEBUG;MY_PATH=D:/Code_store/Cpp_Training/oop/Bank_Project/data;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Code_store\Cpp_Training\oop\Bank_Project\include;D:\Code_store\Cpp_Training\oop\Bank_Project\lib;D:\Code_store\Cpp_Training\oop\Bank_Project\&amp;{PROJECT_BINARY_DIR};%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>D:\Code_store\Cpp_Training\oop\Bank_Project\include;D:\Code_store\Cpp_Training\oop\Bank_Project\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Code_store\Cpp_Training\oop\Bank_Project\include;D:\Code_store\Cpp_Training\oop\Bank_Project\lib;D:\Code_store\Cpp_Training\oop\Bank_Project\&amp;{PROJECT_BINARY_DIR};%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>

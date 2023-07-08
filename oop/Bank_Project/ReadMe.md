@@ -7,8 +7,8 @@
 - Emplyee
 - Admin
 
-- DataSourceInterface : control saving and loading data from text files
-- Validations : collections of some general validation methods
+- DataSourceInterface : control saving , loading and modifying data from text files
+- Validations : collections of some general validation methods (check name , passwords ...)
 
 ### TODO :
 -----------

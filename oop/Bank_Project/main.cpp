@@ -1,11 +1,12 @@
 #include <iostream>
 #include <string>
 #include "include/bank_system.h"
+#include "include/data_files.h"
 
 /*
 first build : 
             - make a build directory
-            - in the build directory , run <cmake .. >   (going to dir where CMakeLists.txt exists and run cmake...this will generate some files in build)
+            - in the build directory , run <cmake .. CMakeLists.txt >  this line go step behind build to read cmakelist and generate build files inside build
             - run <cmake --build . --config Release >   (this will make a Release exe in build)
             - run the .exe file <.\Release\bank_system.exe >
 
@@ -20,6 +21,11 @@ int main()
     Client koko("koko",34123,"1222zsd",3000,3455);
     Employee employee("mohsen ahmed", 6456, "pass123",4200,6000,5000);
     Admin sayed ("sayed hanafy", 3434, "pass123",8100,12000,15000);
+
+    DataSourceInterface data_source;
+    data_source.addClient(osos);
+    data_source.addClient(koko);
+    data_source.addAdmin(sayed);
 
     osos.check_balance();
     osos.transferMoney(koko , 1000);
