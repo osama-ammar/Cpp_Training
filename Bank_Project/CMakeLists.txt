@@ -17,7 +17,7 @@ set(FilES_VAR
 
 set(PROJECT_PATH ${CMAKE_SOURCE_DIR})
 
-set(DATA_PATH "D:/Code_store/Cpp_Training/oop/Bank_Project/data")
+set(DATA_PATH "D:/Code_store/Cpp_Training/Bank_Project/data")
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -${DATA_PATH}")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -${DATA_PATH}")
 ######################################################

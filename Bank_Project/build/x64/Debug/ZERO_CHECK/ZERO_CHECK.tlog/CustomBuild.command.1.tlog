@@ -1,6 +1,6 @@
-^D:\CODE_STORE\CPP_TRAINING\OOP\BANK_PROJECT\BUILD\CMAKEFILES\1D4433CA76217924A8973C983B40FE87\GENERATE.STAMP.RULE
+^D:\CODE_STORE\CPP_TRAINING\BANK_PROJECT\BUILD\CMAKEFILES\C2BAE6B1FB148C2BC31A2F0684C195C2\GENERATE.STAMP.RULE
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SD:/Code_store/Cpp_Training/oop/Bank_Project -BD:/Code_store/Cpp_Training/oop/Bank_Project/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file D:/Code_store/Cpp_Training/oop/Bank_Project/build/bank_system.sln
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/Code_store/Cpp_Training/Bank_Project -BD:/Code_store/Cpp_Training/Bank_Project/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file D:/Code_store/Cpp_Training/Bank_Project/build/bank_system.sln
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone

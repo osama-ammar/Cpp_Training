@@ -1,19 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="D:\Code_store\Cpp_Training\oop\Bank_Project\main.cpp">
+    <ClCompile Include="D:\Code_store\Cpp_Training\Bank_Project\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\Code_store\Cpp_Training\oop\Bank_Project\src\bank_system.cpp">
+    <ClCompile Include="D:\Code_store\Cpp_Training\Bank_Project\src\bank_system.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="D:\Code_store\Cpp_Training\oop\Bank_Project\CMakeLists.txt" />
+    <CustomBuild Include="D:\Code_store\Cpp_Training\Bank_Project\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{07BFF8BE-1C12-32A7-BFF2-960BBD32A16F}</UniqueIdentifier>
+      <UniqueIdentifier>{75009C00-7928-3555-9117-8DAB67B33F8F}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

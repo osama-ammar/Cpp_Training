@@ -1,5 +1,10 @@
 # Bank System
 ----------------
+- The main aim from this project is to train on :
+    - C++ OOP
+    - CMAKE
+    - SOLID principles
+
 
 ### Components (classes) :
 -----------------------
@@ -18,10 +23,10 @@
 
 ### TODO :
 -----------
-- [ ] making classes in header files with basic functionalities
-- [ ] organizing project files 
+- [ ] separating  classes prototypes in header files with basic functionalities
+- [x] organizing project files 
 - [x] using cmake and making a prelimnary CMakeLists.txt file
 - [x] generating txt files for clients info
 - [ ] making this files automatically updated with any change in balance
-- [ ] making cl interface for the project
+- [ ] making command line interface for the project
 

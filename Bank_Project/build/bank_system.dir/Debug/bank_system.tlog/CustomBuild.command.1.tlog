@@ -1,6 +1,6 @@
-^D:\CODE_STORE\CPP_TRAINING\OOP\BANK_PROJECT\CMAKELISTS.TXT
+^D:\CODE_STORE\CPP_TRAINING\BANK_PROJECT\CMAKELISTS.TXT
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SD:/Code_store/Cpp_Training/oop/Bank_Project -BD:/Code_store/Cpp_Training/oop/Bank_Project/build --check-stamp-file D:/Code_store/Cpp_Training/oop/Bank_Project/build/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/Code_store/Cpp_Training/Bank_Project -BD:/Code_store/Cpp_Training/Bank_Project/build --check-stamp-file D:/Code_store/Cpp_Training/Bank_Project/build/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone

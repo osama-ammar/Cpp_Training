@@ -2,13 +2,13 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>D:\Code_store\Cpp_Training\oop\Bank_Project\build\x64\Debug\ZERO_CHECK</FullPath>
+      <FullPath>D:\Code_store\Cpp_Training\Bank_Project\build\x64\Debug\ZERO_CHECK</FullPath>
     </ProjectOutput>
     <ProjectOutput>
-      <FullPath>D:\Code_store\Cpp_Training\oop\Bank_Project\build\Debug\bank_system.exe</FullPath>
+      <FullPath>D:\Code_store\Cpp_Training\Bank_Project\build\Debug\bank_system.exe</FullPath>
     </ProjectOutput>
     <ProjectOutput>
-      <FullPath>D:\Code_store\Cpp_Training\oop\Bank_Project\build\x64\Debug\ALL_BUILD</FullPath>
+      <FullPath>D:\Code_store\Cpp_Training\Bank_Project\build\x64\Debug\ALL_BUILD</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />
