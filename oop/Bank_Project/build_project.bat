@@ -1,7 +1,7 @@
 
 cd build
 cmake .. CMakeLists.txt
-cmake --build . --config Release
-.\Release\bank_system.exe
+cmake --build . --config Debug
+.\Debug\bank_system.exe
 cd ..
 pause

@@ -3,12 +3,18 @@
 
 ### Components (classes) :
 -----------------------
-- Cleint 
-- Emplyee
-- Admin
+- Person
+    - Cleint 
+    - Emplyee
+    - Admin
 
-- DataSourceInterface : control saving , loading and modifying data from text files
+- DataSourceInterface : (abstract class) control saving , loading and modifying data from text files
+    - FileManager : implement DataSourceInterface
+
 - Validations : collections of some general validation methods (check name , passwords ...)
+- Parser : to parse data files
+- Files Helper : save and get from txt files contains
+
 
 ### TODO :
 -----------

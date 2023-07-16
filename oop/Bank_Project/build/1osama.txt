@@ -1,5 +1,0 @@
-this fille is for : osama
-id : 75123
-balance : 1000
-current salary : 3000
-min salary : 12222

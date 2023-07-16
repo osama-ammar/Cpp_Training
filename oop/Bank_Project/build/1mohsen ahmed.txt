@@ -1,5 +1,0 @@
-this fille is for : mohsen ahmed
-id : 6456
-balance : 4200
-current salary : 6000
-min salary : 5000

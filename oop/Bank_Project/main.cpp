@@ -1,5 +1,7 @@
 #include <iostream>
 #include <string>
+#include <cstdio>
+
 #include "include/bank_system.h"
 #include "include/data_files.h"
 
@@ -11,7 +13,7 @@ first build :
             - run the .exe file <.\Release\bank_system.exe >
 
 */
-// a static member in clent class.... set to zero here (only zeroed outside the class)
+// a static member in client class.... set to zero here (only zeroed outside the class)
 int Client::count=0;
 
 int main()
@@ -22,10 +24,12 @@ int main()
     Employee employee("mohsen ahmed", 6456, "pass123",4200,6000,5000);
     Admin sayed ("sayed hanafy", 3434, "pass123",8100,12000,15000);
 
-    DataSourceInterface data_source;
-    data_source.addClient(osos);
-    data_source.addClient(koko);
-    data_source.addAdmin(sayed);
+    // FileManager data_source;
+    // data_source.addClient(osos);
+    // data_source.addClient(koko);
+    // data_source.addAdmin(sayed);
+
+    getchar();
 
     osos.check_balance();
     osos.transferMoney(koko , 1000);

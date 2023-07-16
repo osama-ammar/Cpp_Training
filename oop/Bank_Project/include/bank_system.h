@@ -191,7 +191,8 @@ public: // can be used anywhere
         ofstream myfile;
         string file_name = this->getName() + ".txt";
         // making a txt file an append text in it append(std::ios_base::app) update(ios::in)
-        string data_path =std::to_string(DATA_PATH);
+        string data_path =std::getenv("DATA_PATH");
+
         myfile.open(data_path + file_name);
         myfile << "this fille is for : "
                << this->getName() << "\n"
@@ -369,12 +370,6 @@ public:
     void view_info(){};
     
     void edit_employee_info(int id, string name, string password, double balance){};
-
-
-    int get_balance()
-    {
-        return this->balance;
-    }
 
 
 

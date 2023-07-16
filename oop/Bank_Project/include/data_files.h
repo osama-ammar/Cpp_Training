@@ -20,7 +20,6 @@ this class will be used as abstract class : only to represent the general concep
 class DataSourceInterface
 {
     public :
-        vector<Client> clients_vector;
 
         virtual void addClient(Client new_client)=0;
         virtual void addEmployee(Employee new_employee)=0;
@@ -43,18 +42,27 @@ this class is used to implement Data Source Interface class
 */
 class FileManager : public DataSourceInterface
 {
-        void addClient(Client new_client )
+
+        vector<Client> clients_vector;
+        vector<Employee> employees_vector;
+        vector<Admin> admins_vector;
+
+
+        virtual void addClient(Client new_client )override
             {
+                    this->clients_vector.push_back(new_client);
                     ofstream myfile;
-                    string clients_file ="Clients.txt";
+                    string data_path =std::getenv("DATA_PATH");
+                    string clients_file =data_path+"Clients.txt";
                     //making a txt file an append text in it append(std::ios_base::app) update(ios::in)
+                    // each line in the text contain all info of one client
                     myfile.open(clients_file,std::ios_base::app);
                     myfile<<"this fille is for : "
-                        <<new_client.getName()<<"\n"
-                        <<"id : "<<new_client.getId()<<"\n"
+                        <<new_client.getName()<<"//"
+                        <<"id : "<<new_client.getId()<<"//"
                         <<"balance : "<<new_client.get_balance()<<endl
-                        <<"current salary : "<<new_client.get_min_salary()<<"\n"
-                        <<"min salary : "<<new_client.get_min_salary()<<"\n"
+                        <<"current salary : "<<new_client.get_min_salary()<<"//"
+                        <<"min salary : "<<new_client.get_min_salary()<<"//"
                         <<"==================================================="<<endl;      
                                                 
                     myfile.close();
@@ -62,18 +70,19 @@ class FileManager : public DataSourceInterface
 
 
 
-        void addEmployee(Employee new_employee)
+        virtual void addEmployee(Employee new_employee)override
         {
+            this->employees_vector.push_back(new_employee);
             ofstream myfile;
             string employees_file ="Employees.txt";
             //making a txt file an append text in it append(std::ios_base::app) update(ios::in)
             myfile.open(employees_file,std::ios_base::app);
             myfile<<"this fille is for : "
-                <<new_employee.getName()<<"\n"
-                <<"id : "<<new_employee.getId()<<"\n"
+                <<new_employee.getName()<<"//"
+                <<"id : "<<new_employee.getId()<<"//"
                 <<"balance : "<<new_employee.get_balance()<<endl
-                <<"current salary : "<<new_employee.get_min_salary()<<"\n"
-                <<"min salary : "<<new_employee.get_min_salary()<<"\n"
+                <<"current salary : "<<new_employee.get_min_salary()<<"//"
+                <<"min salary : "<<new_employee.get_min_salary()<<"//"
                 <<"==================================================="<<endl;      
                                         
             myfile.close();
@@ -82,29 +91,29 @@ class FileManager : public DataSourceInterface
 
 
 
-        void addAdmin(Admin new_admin)
+        virtual void addAdmin(Admin new_admin)override
         {
+            this->admins_vector.push_back(new_admin);
         
             ofstream myfile;
             string admins_file ="Admins.txt";
             //making a txt file an append text in it append(std::ios_base::app) update(ios::in)
             myfile.open(admins_file,std::ios_base::app);
             myfile<<"this fille is for : "
-                <<new_admin.getName()<<"\n"
-                <<"id : "<<new_admin.getId()<<"\n"
+                <<new_admin.getName()<<"//"
+                <<"id : "<<new_admin.getId()<<"//"
                 <<"balance : "<<new_admin.get_balance()<<endl
-                <<"current salary : "<<new_admin.get_min_salary()<<"\n"
-                <<"min salary : "<<new_admin.get_min_salary()<<"\n"
+                <<"current salary : "<<new_admin.get_min_salary()<<"//"
+                <<"min salary : "<<new_admin.get_min_salary()<<"//"
                 <<"==================================================="<<endl;      
                                         
             myfile.close();
         }
 
 
-        vector<Client> getAllClients( Client &client){
+        vector<Client> getAllClients(){
 
-            this->clients_vector.push_back(client);
-            string person_name = client.getName();
+            vector<Client> clients_vector;
             fstream clients_file;
             clients_file.open("clients.txt", ios::in);
             if (clients_file.is_open())
@@ -112,17 +121,15 @@ class FileManager : public DataSourceInterface
                 //parsing through lines of the file 
                 //getting lines that contain "name"
                 // getting the chars after "name" and display it
-                std::string line;
-                while (getline(clients_file, line))
-                {
-                    size_t str_pos = line.find("name");
-                    if (str_pos != string::npos)
-                    {
+                // std::string line;
+                // while (getline(clients_file, line))
+                // {
+                //     //get client infor from a line --split it -- save it as a client instance
+                //     string client_info=split(line);
+                //     Client client();
+                //     clients_vector.push_back(client);
 
-                        string person_name = line.substr(str_pos+5,string::npos);
-                        std::cout << "found a name : " <<person_name<< "\n";
-                    }
-                }
+                // }
             }
             clients_file.close(); 
 
@@ -159,7 +166,36 @@ class FileManager : public DataSourceInterface
 // to parse data files
 class Parser
 {
+    public:
+        Parser(){};
 
+        static vector<string> split(string line)
+        {
+            vector<string> line_info;
+            size_t name_pos = line.find("name");
+            size_t id_pos = line.find("id");
+            size_t salary_pos = line.find("salary");
+            size_t balance_pos = line.find("balance");
+            //check if name_pos != -1 (exist)
+            if (name_pos != string::npos)
+            {
+                string person_name = line.substr(name_pos+5,string::npos);
+                string person_id = line.substr(id_pos+5,string::npos);
+                string person_salary = line.substr(salary_pos+5,string::npos);
+                string person_balance = line.substr(balance_pos+5,string::npos);
+                line_info.push_back(person_name);
+                line_info.push_back(person_id);
+                line_info.push_back(person_salary);
+                line_info.push_back(person_balance);
+            }
+            return line_info;
+        };
+
+        static Client parseToClient(string line){};
+
+        static Employee parseToEmployee(string line){};
+
+        static Admin parseToAdmin(string line){};
 
 };
 
@@ -169,7 +205,24 @@ class Parser
 //save and get from txt files contains
 class FilesHelper
 {
+    public:
+    FilesHelper(){};
 
+    static void saveLast(string fileName, int id){};
+
+    static int getLast(string fileName){};
+
+    static void saveClient(Client c){};
+
+    static void saveEmployee(string fileName, string lastIdFile, Employee e){};
+
+    static void getClients(){};
+
+    static void getEmployees(){};
+
+    static void getAdmins(){};
+
+    static void clearFile(string fileName, string lastIdFile){};
 
 
 };

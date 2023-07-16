@@ -2,7 +2,7 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>D:\Code_store\Cpp_Training\oop\Bank_Project\build\x64\Release\ZERO_CHECK</FullPath>
+      <FullPath>D:\Code_store\Cpp_Training\oop\Bank_Project\build\x64\Debug\ZERO_CHECK</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />
