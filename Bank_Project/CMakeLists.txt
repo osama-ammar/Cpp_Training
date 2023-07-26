@@ -16,10 +16,9 @@ set(FilES_VAR
     src/bank_system.cpp )
 
 set(PROJECT_PATH ${CMAKE_SOURCE_DIR})
-
 set(DATA_PATH "D:/Code_store/Cpp_Training/Bank_Project/data")
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -${DATA_PATH}")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -${DATA_PATH}")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -DDATA_PATH")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DDATA_PATH")
 ######################################################
 ######################################################
 
@@ -42,16 +41,42 @@ target_compile_options(bank_system PUBLIC -DMY_PATH=${DATA_PATH})
 # this ~enable you to define Databath in cpp files as a macro
 #target_compile_definitions(bank_system PUBLIC ${DATA_PATH})
 
-
-#because my_configuration.h will bw generated inside inside build , we should include PROJECT_BINARY_DIR dir so that our main can see it 
-target_include_directories(bank_system PUBLIC  &{PROJECT_BINARY_DIR} )
-target_compile_definitions(bank_system
-	PUBLIC
-		-DDATA_PATH="${DATA_PATH}"
+# Create a target to run the project from vscode button
+add_custom_target(run
+  COMMAND ${CMAKE_COMMAND} -E echo "Running my_project..."
+  COMMAND ./bank_system
 )
+
+# Set the default target to run
+set_target_properties(run PROPERTIES FOLDER "Run")
 ######################################################
 ######################################################
+
+
+
+#set(DATA_PATH "D:/Code_store/Cpp_Training/Bank_Project/data")
+#set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -${DATA_PATH}")
+#set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -${DATA_PATH}")
+
+#adding DATA_PATH to be identified ... and used 
+#target_compile_options(bank_system PUBLIC -DMY_PATH=${DATA_PATH})
+
+# this ~enable you to define Databath in cpp files as a macro
+#target_compile_definitions(bank_system PUBLIC ${DATA_PATH})
+
+
+####################
+# Configuration
+####################
 
 #generating a configuration file ( my_configuration.h) 
 #configure_file(defaultconfig.h.in  defaultconfig.h)
+
+
+#because my_configuration.h will bw generated inside inside build , we should include PROJECT_BINARY_DIR dir so that our main can see it 
+# target_include_directories(bank_system PUBLIC  &{PROJECT_BINARY_DIR} )
+# target_compile_definitions(bank_system
+# 	PUBLIC
+# 		-DDATA_PATH="${DATA_PATH}"
+# )
 

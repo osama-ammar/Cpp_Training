@@ -18,23 +18,26 @@ int Client::count=0;
 
 int main()
 {
+    std::cout << "I'mmmmmmmm eworkkking" <<endl;
 
     Client osos("osama",75123,"1234azsd",3000,12222);
     Client koko("koko",34123,"1222zsd",3000,3455);
     Employee employee("mohsen ahmed", 6456, "pass123",4200,6000,5000);
     Admin sayed ("sayed hanafy", 3434, "pass123",8100,12000,15000);
+    std::cout << "I'mmmmmmmm eworkkking" <<endl;
 
     // FileManager data_source;
     // data_source.addClient(osos);
     // data_source.addClient(koko);
     // data_source.addAdmin(sayed);
 
-    getchar();
+    //getchar();
 
     osos.check_balance();
     osos.transferMoney(koko , 1000);
     osos.check_balance();
     koko.check_balance();
+    std::cout << "I'mmmmmmmm eworkkking" <<endl;
 
     double employee_new_slary;
     cout << "set emplyee new salary ......."<<endl;
@@ -43,6 +46,7 @@ int main()
     osos.transferMoney(koko , 1000);
     osos.check_balance();
     koko.check_balance();
+    std::cout << "I'mmmmmmmm eworkkking" <<endl;
 
 
 

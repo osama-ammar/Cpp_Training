@@ -1,34 +1,36 @@
+
+#include "bank_system.h"
+#ifndef HEADER_FILE_H
+#define HEADER_FILE_H
 #include <vector>
 #include <string>
 #include <iostream>
 #include <fstream>
 
-#include "bank_system.h"
+
 using namespace std;
 /*
     - contains classes for files and data handling
-
-
 */
+
 
 /*
 this class will be used as abstract class : only to represent the general concept
                                             - it cannot be instantiated
                                             -their methods are abstract(pure virtual function so should be overridden by child class)
-
 */
 class DataSourceInterface
 {
     public :
 
+        //pure virtual fn : must be overridden by child class  || virtual function : can be overridden by child class
         virtual void addClient(Client new_client)=0;
         virtual void addEmployee(Employee new_employee)=0;
         virtual void addAdmin(Admin new_admin)=0;
-        virtual vector<Client> getAllClients( Client &client)=0;
+        virtual vector<Client> getAllClients()=0;
         //virtual vector<Employee>getAllEmployees()=0;
         //virtual vector<Employee>getAllAdmins()=0;
         virtual void removeAllClients()=0;
-
         virtual void removeAllEmployees()=0;
         virtual void removeAllAdmins()=0;
 };
@@ -36,33 +38,31 @@ class DataSourceInterface
 ////////////////////////////////////////////////
 ////////////////////////////////////////////////
 
-/*
-this class is used to implement Data Source Interface class
 
-*/
+//this class is used to implement Data Source Interface class
 class FileManager : public DataSourceInterface
 {
-
+    public:
         vector<Client> clients_vector;
         vector<Employee> employees_vector;
         vector<Admin> admins_vector;
 
 
-        virtual void addClient(Client new_client )override
+        void addClient(Client* new_client )
             {
-                    this->clients_vector.push_back(new_client);
+                    this->clients_vector.push_back(*new_client);
                     ofstream myfile;
-                    string data_path =std::getenv("DATA_PATH");
+                    string data_path ="D:/Code_store/Cpp_Training/Bank_Project/data/";
                     string clients_file =data_path+"Clients.txt";
                     //making a txt file an append text in it append(std::ios_base::app) update(ios::in)
                     // each line in the text contain all info of one client
                     myfile.open(clients_file,std::ios_base::app);
                     myfile<<"this fille is for : "
-                        <<new_client.getName()<<"//"
-                        <<"id : "<<new_client.getId()<<"//"
-                        <<"balance : "<<new_client.get_balance()<<endl
-                        <<"current salary : "<<new_client.get_min_salary()<<"//"
-                        <<"min salary : "<<new_client.get_min_salary()<<"//"
+                        <<new_client->getName()<<"//"
+                        <<"id : "<<new_client->getId()<<"//"
+                        <<"balance : "<<new_client->get_balance()<<endl
+                        <<"current salary : "<<new_client->get_min_salary()<<"//"
+                        <<"min salary : "<<new_client->get_min_salary()<<"//"
                         <<"==================================================="<<endl;      
                                                 
                     myfile.close();
@@ -70,7 +70,7 @@ class FileManager : public DataSourceInterface
 
 
 
-        virtual void addEmployee(Employee new_employee)override
+        void addEmployee(Employee new_employee)
         {
             this->employees_vector.push_back(new_employee);
             ofstream myfile;
@@ -91,7 +91,7 @@ class FileManager : public DataSourceInterface
 
 
 
-        virtual void addAdmin(Admin new_admin)override
+        void addAdmin(Admin new_admin)
         {
             this->admins_vector.push_back(new_admin);
         
@@ -157,8 +157,37 @@ class FileManager : public DataSourceInterface
         }
 
 
-        void removeAllEmployees(){};
-        void removeAllAdmins(){};
+        void removeAllEmployees()
+        {
+            this->employees_vector.clear();
+            fstream clients_file;
+            // open file in write mode
+            clients_file.open("employees.txt",ios::out | ios::trunc);
+            if (clients_file.is_open())
+            {
+                //clearing the clients file
+                clients_file.clear();
+            }
+            clients_file.close(); 
+
+        };
+
+
+
+        void removeAllAdmins()
+        {
+            this->admins_vector.clear();
+            fstream clients_file;
+            // open file in write mode
+            clients_file.open("admins.txt",ios::out | ios::trunc);
+            if (clients_file.is_open())
+            {
+                //clearing the clients file
+                clients_file.clear();
+            }
+            clients_file.close(); 
+
+        };
 
 };
 
@@ -226,3 +255,4 @@ class FilesHelper
 
 
 };
+#endif

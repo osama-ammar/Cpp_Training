@@ -1,3 +1,4 @@
 D:/Code_store/Cpp_Training/Bank_Project/build/CMakeFiles/bank_system.dir
+D:/Code_store/Cpp_Training/Bank_Project/build/CMakeFiles/run.dir
 D:/Code_store/Cpp_Training/Bank_Project/build/CMakeFiles/ALL_BUILD.dir
 D:/Code_store/Cpp_Training/Bank_Project/build/CMakeFiles/ZERO_CHECK.dir

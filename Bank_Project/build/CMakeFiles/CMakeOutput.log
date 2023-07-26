@@ -9,7 +9,7 @@ The output was:
 Microsoft (R) Build Engine version 16.9.2+58c36d143 for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-Build started 7/16/2023 10:50:53 AM.
+Build started 7/16/2023 4:01:40 PM.
 Project "D:\Code_store\Cpp_Training\Bank_Project\build\CMakeFiles\3.24.2\CompilerIdC\CompilerIdC.vcxproj" on node 1 (default targets).
 PrepareForBuild:
   Creating directory "Debug\".
@@ -35,7 +35,7 @@ Build succeeded.
     0 Warning(s)
     0 Error(s)
 
-Time Elapsed 00:00:07.84
+Time Elapsed 00:00:06.12
 
 
 Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
@@ -54,7 +54,7 @@ The output was:
 Microsoft (R) Build Engine version 16.9.2+58c36d143 for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-Build started 7/16/2023 10:51:03 AM.
+Build started 7/16/2023 4:01:48 PM.
 Project "D:\Code_store\Cpp_Training\Bank_Project\build\CMakeFiles\3.24.2\CompilerIdCXX\CompilerIdCXX.vcxproj" on node 1 (default targets).
 PrepareForBuild:
   Creating directory "Debug\".
@@ -80,7 +80,7 @@ Build succeeded.
     0 Warning(s)
     0 Error(s)
 
-Time Elapsed 00:00:06.10
+Time Elapsed 00:00:06.89
 
 
 Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
@@ -92,28 +92,28 @@ The CXX compiler identification is MSVC, found in "D:/Code_store/Cpp_Training/Ba
 Detecting C compiler ABI info compiled with the following output:
 Change Dir: D:/Code_store/Cpp_Training/Bank_Project/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_031ab.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.9.2+58c36d143 for .NET Framework
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_78578.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.9.2+58c36d143 for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
   Microsoft (R) C/C++ Optimizing Compiler Version 19.28.29924 for x64
   Copyright (C) Microsoft Corporation.  All rights reserved.
   CMakeCCompilerABI.c
-  cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_031ab.dir\Debug\\" /Fd"cmTC_031ab.dir\Debug\vc142.pdb" /Gd /TC /errorReport:queue "C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeCCompilerABI.c"
-  cmTC_031ab.vcxproj -> D:\Code_store\Cpp_Training\Bank_Project\build\CMakeFiles\CMakeTmp\Debug\cmTC_031ab.exe
+  cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_78578.dir\Debug\\" /Fd"cmTC_78578.dir\Debug\vc142.pdb" /Gd /TC /errorReport:queue "C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeCCompilerABI.c"
+  cmTC_78578.vcxproj -> D:\Code_store\Cpp_Training\Bank_Project\build\CMakeFiles\CMakeTmp\Debug\cmTC_78578.exe
 
 
 
 Detecting CXX compiler ABI info compiled with the following output:
 Change Dir: D:/Code_store/Cpp_Training/Bank_Project/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_5e5b8.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.9.2+58c36d143 for .NET Framework
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_b17f7.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.9.2+58c36d143 for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
   Microsoft (R) C/C++ Optimizing Compiler Version 19.28.29924 for x64
   Copyright (C) Microsoft Corporation.  All rights reserved.
   CMakeCXXCompilerABI.cpp
-  cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_5e5b8.dir\Debug\\" /Fd"cmTC_5e5b8.dir\Debug\vc142.pdb" /Gd /TP /errorReport:queue "C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeCXXCompilerABI.cpp"
-  cmTC_5e5b8.vcxproj -> D:\Code_store\Cpp_Training\Bank_Project\build\CMakeFiles\CMakeTmp\Debug\cmTC_5e5b8.exe
+  cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_b17f7.dir\Debug\\" /Fd"cmTC_b17f7.dir\Debug\vc142.pdb" /Gd /TP /errorReport:queue "C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeCXXCompilerABI.cpp"
+  cmTC_b17f7.vcxproj -> D:\Code_store\Cpp_Training\Bank_Project\build\CMakeFiles\CMakeTmp\Debug\cmTC_b17f7.exe
 
 
 

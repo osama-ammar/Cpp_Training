@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\Code_store\Cpp_Training\Bank_Project\build\CMakeFiles\c2bae6b1fb148c2bc31a2f0684c195c2\run.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Code_store\Cpp_Training\Bank_Project\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="D:\Code_store\Cpp_Training\Bank_Project\build\CMakeFiles\run" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{A64E46C7-751B-33FE-B7C7-E973993CAF75}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

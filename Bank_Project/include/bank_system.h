@@ -6,14 +6,10 @@
 using namespace std;
 #include <fstream>
 //#include "defaultconfig.h"
-
-
-/*
-in this project, we will create a bank system and apply oop and SOLID design concepts
+#include "data_files.h"
 
 
 
-*/
 
 // overloading : functions of same name / but different signature(arguments types & no)
 // oveRRiding : functions of SSame name / SSame signature(arguments types & no) / & inheritance occuar
@@ -190,16 +186,18 @@ public: // can be used anywhere
     {
         ofstream myfile;
         string file_name = this->getName() + ".txt";
+
         // making a txt file an append text in it append(std::ios_base::app) update(ios::in)
-        string data_path =std::getenv("DATA_PATH");
+
+        string data_path ="D:/Code_store/Cpp_Training/Bank_Project/data/";//std::getenv("DATA_PATH");//this line stopped the program in a very strange way
 
         myfile.open(data_path + file_name);
         myfile << "this fille is for : "
-               << this->getName() << "\n"
-               << "id : " << this->getId() << "\n"
-               << "balance : " << new_balance << endl
-               << "current salary : " << this->current_salary << "\n"
-               << "min salary : " << this->min_salary << "\n";
+            << this->getName() << "\n"
+            << "id : " << this->getId() << "\n"
+            << "balance : " << new_balance << endl
+            << "current salary : " << this->current_salary << "\n"
+            << "min salary : " << this->min_salary << "\n";
 
         myfile.close();
     }
@@ -210,7 +208,7 @@ public: // can be used anywhere
     }
 };
 
-class Client : public Person
+class Client : public Person //, public FileManager
 {
 private:
     double balance;
@@ -225,10 +223,15 @@ public:
         double balance,
         double current_salary) : Person(name, id, password, balance, current_salary)
     {
+        std::cout << "adding a new client" << std::endl;
         this->balance = balance;
         this->count += 1;
         this->update_balance_file(balance);
+        //auto obj =this;
+        //this->addClient(obj);
+    
     }
+
 
     void set_balance(double balance)
     {

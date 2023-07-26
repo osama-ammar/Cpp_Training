@@ -16,6 +16,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "bank_system", "bank_system.
 		{FCED4A80-F98C-3F8D-90DF-03B0E856ADB5} = {FCED4A80-F98C-3F8D-90DF-03B0E856ADB5}
 	EndProjectSection
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "run", "run.vcxproj", "{3858366A-50D0-3E9D-9762-88F9C585F68F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{FCED4A80-F98C-3F8D-90DF-03B0E856ADB5} = {FCED4A80-F98C-3F8D-90DF-03B0E856ADB5}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -44,6 +49,10 @@ Global
 		{4B5DB7AC-64D9-39FE-A55C-6C849844CE0A}.MinSizeRel|x64.Build.0 = MinSizeRel|x64
 		{4B5DB7AC-64D9-39FE-A55C-6C849844CE0A}.RelWithDebInfo|x64.ActiveCfg = RelWithDebInfo|x64
 		{4B5DB7AC-64D9-39FE-A55C-6C849844CE0A}.RelWithDebInfo|x64.Build.0 = RelWithDebInfo|x64
+		{3858366A-50D0-3E9D-9762-88F9C585F68F}.Debug|x64.ActiveCfg = Debug|x64
+		{3858366A-50D0-3E9D-9762-88F9C585F68F}.Release|x64.ActiveCfg = Release|x64
+		{3858366A-50D0-3E9D-9762-88F9C585F68F}.MinSizeRel|x64.ActiveCfg = MinSizeRel|x64
+		{3858366A-50D0-3E9D-9762-88F9C585F68F}.RelWithDebInfo|x64.ActiveCfg = RelWithDebInfo|x64
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {45D293B0-CCA0-3B01-85C4-7538932246F6}

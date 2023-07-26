@@ -56,7 +56,8 @@
         "list": "cpp",
         "queue": "cpp",
         "set": "cpp",
-        "xtree": "cpp"
+        "xtree": "cpp",
+        "map": "cpp"
     },
     "cmake.sourceDirectory": "D:/Code_store/Cpp_Training/Bank_Project"
 }
