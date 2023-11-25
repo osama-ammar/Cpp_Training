@@ -1,12 +1,11 @@
 
-#include "bank_system.h"
-//#ifndef HEADER_FILE_H
-//#define HEADER_FILE_H
+#ifndef HEADER_FILE_H
+#define HEADER_FILE_H
 #include <vector>
 #include <string>
 #include <iostream>
 #include <fstream>
-
+#include "bank_system.h"
 
 using namespace std;
 /*

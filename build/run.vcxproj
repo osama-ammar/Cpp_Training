@@ -110,7 +110,7 @@
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">setlocal
 "C:\Program Files\CMake\bin\cmake.exe" -E echo "Running my_project..."
 if %errorlevel% neq 0 goto :cmEnd
-.\bank_system
+.\build\Debug\bank_system.exe
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -126,7 +126,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|win32'">setlocal
 "C:\Program Files\CMake\bin\cmake.exe" -E echo "Running my_project..."
 if %errorlevel% neq 0 goto :cmEnd
-.\bank_system
+.\build\Debug\bank_system.exe
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -142,7 +142,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">setlocal
 "C:\Program Files\CMake\bin\cmake.exe" -E echo "Running my_project..."
 if %errorlevel% neq 0 goto :cmEnd
-.\bank_system
+.\build\Debug\bank_system.exe
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -158,7 +158,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">setlocal
 "C:\Program Files\CMake\bin\cmake.exe" -E echo "Running my_project..."
 if %errorlevel% neq 0 goto :cmEnd
-.\bank_system
+.\build\Debug\bank_system.exe
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone

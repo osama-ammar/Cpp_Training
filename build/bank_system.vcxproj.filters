@@ -9,9 +9,20 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="D:\Code_store\Cpp_Training\Bank_Project\include\bank_system.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Code_store\Cpp_Training\Bank_Project\include\data_files.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
     <CustomBuild Include="D:\Code_store\Cpp_Training\Bank_Project\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{E40B477D-6C1C-3C35-B267-74D2E149A624}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Source Files">
       <UniqueIdentifier>{A1333AAE-3DCA-3F2C-98B8-CDA84D0E3CA8}</UniqueIdentifier>
     </Filter>
