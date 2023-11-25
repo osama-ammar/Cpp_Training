@@ -1,14 +1,12 @@
-cmake_minimum_required(VERSION 3.22)
-
-#name of the project
-project(bank_system)
-
-######################################################
-######################################################
-
 #setting c++ standard for this project
+cmake_minimum_required(VERSION 3.22)
 set (CMAKE_CXX_STANDARD 14)
 set (CMAKE_CXX_STANDARD_REQUIRED True)
+
+######################################################
+######################################################
+#name of the project
+project(bank_system)
 
 #we will make a variable (~list) called FilES_VAR that carry .cpp files names as values
 set(FilES_VAR 
@@ -35,11 +33,13 @@ add_executable(bank_system  ${FilES_VAR} )
 #if your .cpp files (Hello_executable) need files from a directory include this directory .... 
 target_include_directories(bank_system PUBLIC  include/  lib/ )
 
-#adding DATA_PATH to be identified ... and used 
-target_compile_options(bank_system PUBLIC -DMY_PATH=${DATA_PATH})
 
-# this ~enable you to define Databath in cpp files as a macro
-#target_compile_definitions(bank_system PUBLIC ${DATA_PATH})
+#defining data dir constant ( now you can use (DATA_DIR) in your code)
+set(BANK_DATA_DIR "${CMAKE_CURRENT_SOURCE_DIR}/data")
+target_compile_definitions(bank_system
+	PUBLIC
+		-DDATA_DIR="${BANK_DATA_DIR}"
+)
 
 # Create a target to run the project from vscode button
 add_custom_target(run

@@ -18,12 +18,12 @@ using namespace std;
 class Validations
 {
 public:
-    static int check_name(string name)
+    static bool check_name(string name)
     {
         // this method returns the index of 1st character in name string that doesn't match any char in the argument string
         size_t fond_index = name.find_first_not_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ");
 
-        // npos is an index and =-1 be default meaning (no match)
+        // npos is an index and =-1 by default meaning (no match)
         if (name.length() <= 20 && name.length() >= 5 && fond_index != std::string::npos)
         {
             cout << "accepted name entered" << endl;
@@ -31,7 +31,7 @@ public:
         }
     }
 
-    static int check_bassword(string password)
+    static bool check_bassword(string password)
     {
         if (password.length() <= 20 && password.length() >= 8)
         {
@@ -157,21 +157,20 @@ public: // can be used anywhere
 
 
     // getting information about the client from  a file
-    template <class T>
-    void get_Person_info(T &client)
+    static void get_Person_info(Person client)
     {
         string person_name = client.getName();
         fstream client_file;
-        person_file.open(DATA_PATH + person_name + ".txt", ios::in);
-        if (person_file.is_open())
+        client_file.open(DATA_DIR + person_name + ".txt", ios::in);
+        if (client_file.is_open())
         {
             std::string line;
-            while (getline(person_file, line))
+            while (getline(client_file, line))
             {
                 std::cout << line << "\n";
             }
         }
-        person_file.close();
+        client_file.close();
     }
 
 

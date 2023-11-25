@@ -189,6 +189,15 @@ CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
 //Value Computed by CMake
+Project_BINARY_DIR:STATIC=D:/Code_store/Cpp_Training/build
+
+//Value Computed by CMake
+Project_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+Project_SOURCE_DIR:STATIC=D:/Code_store/Cpp_Training/Bank_Project
+
+//Value Computed by CMake
 bank_system_BINARY_DIR:STATIC=D:/Code_store/Cpp_Training/build
 
 //Value Computed by CMake

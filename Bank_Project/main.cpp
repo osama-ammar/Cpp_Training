@@ -15,13 +15,17 @@ first build :
 */
 // a static member in client class.... set to zero here (only zeroed outside the class)
 int Client::count=0;
+string DATAFOLDER= DATA_DIR;
+
 
 int main()
 {
+    std::cout<<DATAFOLDER<<endl;
     std::cout << "I'mmmmmmmm eworkkking" <<endl;
 
     Client osos("osama",75123,"1234azsd",3000,12222);
     Client koko("koko",34123,"1222zsd",3000,3455);
+
     Employee employee("mohsen ahmed", 6456, "pass123",4200,6000,5000);
     Admin sayed ("sayed hanafy", 3434, "pass123",8100,12000,15000);
     std::cout << "I'mmmmmmmm eworkkking" <<endl;
@@ -43,10 +47,14 @@ int main()
     cout << "set emplyee new salary ......."<<endl;
     cin >> employee_new_slary;
     sayed.set_employee_salary(&employee,employee_new_slary);
+
     osos.transferMoney(koko , 1000);
+
     osos.check_balance();
     koko.check_balance();
+    
     std::cout << "I'mmmmmmmm eworkkking" <<endl;
+    //Person::get_Person_info(&koko);
 
 
 

@@ -10,7 +10,7 @@
 -----------------------
 - Person
     - Cleint 
-    - Emplyee
+    - Employee
     - Admin
 
 - DataSourceInterface : (abstract class) control saving , loading and modifying data from text files

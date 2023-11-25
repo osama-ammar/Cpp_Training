@@ -1,7 +1,7 @@
 
 #include "bank_system.h"
-#ifndef HEADER_FILE_H
-#define HEADER_FILE_H
+//#ifndef HEADER_FILE_H
+//#define HEADER_FILE_H
 #include <vector>
 #include <string>
 #include <iostream>
@@ -17,7 +17,7 @@ using namespace std;
 /*
 this class will be used as abstract class : only to represent the general concept
                                             - it cannot be instantiated
-                                            -their methods are abstract(pure virtual function so should be overridden by child class)
+                                            - their methods are abstract(pure virtual function so should be overridden by child class)
 */
 class DataSourceInterface
 {
