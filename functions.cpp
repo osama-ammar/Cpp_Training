@@ -31,7 +31,7 @@ void fun0(int a,int b,int c)   //by this method (assigning the arguments by valu
 		cout<<sum<<endl;	
 	}
 	
-void fun2(int *a) //by this method (assigning the arguments by reference -not value- we can make modification to the parameter, we take a copy of variable address and use it to access the variable itself in the memory..this saves memory rather than copying very large variable sizes
+void fun_ref(int *a) //by this method (assigning the arguments by reference -not value- we can make modification to the parameter, we take a copy of variable address and use it to access the variable itself in the memory..this saves memory rather than copying very large variable sizes
 	{
 		
 		 * a=70;
@@ -39,7 +39,12 @@ void fun2(int *a) //by this method (assigning the arguments by reference -not va
 		 	
 	}
 
-
+void fun_ref(int &a) //?????????????????????
+	{
+		
+		a=70;
+		cout<<a<<endl;
+	}
 	
 int fun (float a,float b,float c) {  // this is called function overloading to make the same function valid for many types of inputs 
 		float sum=a+b+c;
@@ -72,7 +77,7 @@ int main(){
 	// }	
 		
 	int var=3;
-	fun2(&var);
+	fun_ref(&var);
 	cout<<var<<endl;
 	
 	//fun(1,2,3);
