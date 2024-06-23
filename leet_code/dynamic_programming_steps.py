@@ -29,10 +29,50 @@ def brute_frog(current_element_id=0 ):
     
     
     
-def recursion_frog(current_element_id=0 ):
-    pass
     
 
+
+
+
+
+
+
+
+
+##################################################################################################
+number_of_elements = 0
+elements_list =[]
+def recursion_frog(current_element_id=0 ):
+    # for every element find the cost of (element , element+1)  &&  (element , element+1)
+    # if reached last element --> stop
+    
+    # Base case
+    if current_element_id == number_of_elements-2 :
+        cost = abs(elements_list[current_element_id]- elements_list[current_element_id+1])
+        return cost
+
+    if current_element_id == number_of_elements-1 :
+        return 0
+        
+    
+    cost1 = abs(elements_list[current_element_id] - elements_list[current_element_id+1])
+    cost2 = abs(elements_list[current_element_id] - elements_list[current_element_id+2])
+    
+    ans_with_cost1 = dynamic_frog(current_element_id+1)
+    ans_with_cost2 = dynamic_frog(current_element_id+2)
+    
+    ans=min(ans_with_cost1 +cost1 ,ans_with_cost2 + cost2)
+
+    
+    return ans
+
+
+
+
+
+
+
+#######################################################################################################
 number_of_elements = 0
 elements_list =[]
 computations = []

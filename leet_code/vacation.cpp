@@ -1,76 +1,55 @@
-#include <vector>
+#include <iostream>
 using namespace std;
-
 /*
-3
-10 [40] 70
-20 50 [80]
-30 [60] 90
-
-1- find max path
-    - by simple example
-    - make it complex
-    - use recursion
-2- except identical indexes
-3- memoization
-
-
-//vector<vector<int>> twoDVector(rows, vector<int>(columns, initialValue));
+- what is the base case .... simplest case (here ..when no_of_days=0)
+- what info do you need as function inputs when you make a transition
+- make recursion then momoization
 
 
 */
 
-int max_path(vector<int> days_vec, int days_no) {
-  int current_path = 0;
+int vaccation[100000][3];
+int no_of_days;
+int max_path(int day , int prev_activity_index) {
 
-  int prev_activity = 0;
-  int activity = 0;
+        //base case
+        if (no_of_days == day)
+            return 0; 
 
-  int max_path = 0;
-  int step = 0;
-
-  for (int i = 0; i < days_vec.size(); i++) {
-    // vector<int> normal_days={0,1,2};
-    for (int a = 0; a < 3; a++)
-        activity = days_vec[i][a];
-        current_path = activity + prev_activity;
-        
-        prev_activity=activity;
-
-    // normal_days.erase(step);
-  }
-  max_path = max(current_path, max_path(days_vec, days_no))
-}
-
-
-
-
-
-
-
-
-
-
-int max_path(vector<int> day1_vec , vector<int>  day2_vec, int days_no) {
-
-    int current_path = 0;
-    int max_path = 0;
-
-    for (int i = 0; i < day1_vec.size(); i++) 
-    {
-        // vector<int> normal_days={0,1,2};
-        for (int j = 0; j < day2_vec.size(); j++)
-            current_path = day1_vec[i] + day2_vec[j];
-            if (current_path>max_path)
+        // transition
+        int max_result=0;
+        for(int i=0 ; i<=2 ; i++)
+        {
+            if(prev_activity_index!=i)
             {
-                max_path=current_path;
+
+                int score = max_path(day+1 , i) + vaccation[day][i];
+                max_result = max(score,max_result);
             }
-    }
-        return max_path;
+                //max_result= max(max_path(day+1,i),max_result) + vaccation[day][i] ;
+        }
+
+        return max_result;
     
 }
 
+int main()
+{
+    cin>>no_of_days;
+    for(int i = 0 ; i<no_of_days ; i++)
+    {
+        for(int j=0 ; j<=2 ; j++)
+            cin>>vaccation[i][j];
+    }
 
+    int result1 = max_path(0,0);
+    int result2 = max_path(0,1);
+    int result3 = max_path(0,2);
+
+    cout<<max(result3,max(result1,result2));
+
+    
+}
 
 
 
