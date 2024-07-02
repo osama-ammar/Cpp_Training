@@ -1,109 +1,46 @@
 
 """
-There are N stones, numbered 1,2,…,N. For each i (1≤i≤N), the height of Stone i is
+General steps and questions you should ask yourself:
 
-hi​.
 
-There is a frog who is initially on Stone
-1. He will repeat the following action some number of times to reach Stone
+- what is the basic case
+- what argum ents do you need in the next call
+-
+-
+-
+-
+-
+-
+-
 
-N:
+Problem Statement
 
-    If the frog is currently on Stone 
+You are climbing a staircase. It takes nn steps to reach the top. Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
+Example
 
-i, jump to Stone i+1 or Stone i+2. Here, a cost of ∣hi​−hj​∣ is incurred, where
+Let's say n=4n=4. The possible ways to climb to the top are:
 
-    j is the stone to land on.
+    1+1+1+11+1+1+1
+    1+1+21+1+2
+    1+2+11+2+1
+    2+1+12+1+1
+    2+22+2
 
-Find the minimum possible total cost incurred before the frog reaches Stone
-N.
-        _type_: _description_
+So, there are 5 ways to reach the top when n=4n=4.
+Steps to Solve the Problem Using Dynamic Programming
+
+    Define the State:
+        Let dp[i] represent the number of distinct ways to reach step ii.
+
+    Base Cases:
+        dp[0] = 1 (There is one way to stay at the ground step, by doing nothing)
+        dp[1] = 1 (There is one way to reach the first step, by taking a single step)
+
+    Recurrence Relation:
+        To reach step ii, you can either come from step i−1i−1 by taking a single step, or from step i−2i−2 by taking two steps.
+        Therefore:
+        dp[i]=dp[i−1]+dp[i−2]
+        dp[i]=dp[i−1]+dp[i−2]
+
 """
 
-
-
-
-def brute_frog(current_element_id=0 ):
-    pass
-    
-    
-    
-    
-    
-
-
-
-
-
-
-
-
-
-##################################################################################################
-number_of_elements = 0
-elements_list =[]
-def recursion_frog(current_element_id=0 ):
-    # for every element find the cost of (element , element+1)  &&  (element , element+1)
-    # if reached last element --> stop
-    
-    # Base case
-    if current_element_id == number_of_elements-2 :
-        cost = abs(elements_list[current_element_id]- elements_list[current_element_id+1])
-        return cost
-
-    if current_element_id == number_of_elements-1 :
-        return 0
-        
-    
-    cost1 = abs(elements_list[current_element_id] - elements_list[current_element_id+1])
-    cost2 = abs(elements_list[current_element_id] - elements_list[current_element_id+2])
-    
-    ans_with_cost1 = dynamic_frog(current_element_id+1)
-    ans_with_cost2 = dynamic_frog(current_element_id+2)
-    
-    ans=min(ans_with_cost1 +cost1 ,ans_with_cost2 + cost2)
-
-    
-    return ans
-
-
-
-
-
-
-
-#######################################################################################################
-number_of_elements = 0
-elements_list =[]
-computations = []
-def dynamic_frog(current_element_id=0 ):
-    # for every element find the cost of (element , element+1)  &&  (element , element+1)
-    # save each cost difference {(element1,element2) : cost}
-    # note : (element1,element2) : cost == (element2,element1) : cost 
-    # if an operation exists in the dict ---> don't repeat
-    # if reached last element --> stop
-    
-
-    # Base case
-    if current_element_id == number_of_elements-2 :
-        cost = abs(elements_list[current_element_id]- elements_list[current_element_id+1])
-        return cost
-
-    if current_element_id == number_of_elements-1 :
-        return 0
-        
-    if computations[current_element_id] != -1 :
-        return computations[current_element_id]
-    
-    
-    cost1 = abs(elements_list[current_element_id] - elements_list[current_element_id+1])
-    cost2 = abs(elements_list[current_element_id] - elements_list[current_element_id+2])
-    
-    ans_with_cost1 = dynamic_frog(current_element_id+1)
-    ans_with_cost2 = dynamic_frog(current_element_id+2)
-    
-    ans=min(ans_with_cost1 +cost1 ,ans_with_cost2 + cost2)
-    print(ans)
-    computations[current_element_id]=ans
-    
-    return ans

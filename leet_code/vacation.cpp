@@ -1,5 +1,9 @@
 #include <iostream>
 using namespace std;
+#include <map>
+#include <vector>
+
+
 /*
 - what is the base case .... simplest case (here ..when no_of_days=0)
 - what info do you need as function inputs when you make a transition
@@ -10,6 +14,9 @@ using namespace std;
 
 int vaccation[100000][3];
 int no_of_days;
+map<vector<int> , int> storage ;
+
+
 int max_path(int day , int prev_activity_index) {
 
         //base case
@@ -20,11 +27,25 @@ int max_path(int day , int prev_activity_index) {
         int max_result=0;
         for(int i=0 ; i<=2 ; i++)
         {
-            if(prev_activity_index!=i)
+            if(prev_activity_index != i)
             {
+
+
+                // searching for specfic value using key ... if not found store this computation
+                auto search_value = storage.find({vaccation[day][prev_activity_index],vaccation[day+1][i]}) ;
+                if (search_value != storage.end())
+                {
+                    return search_value->second;
+                }
+                else
+                {
+                    storage[{vaccation[day][prev_activity_index],vaccation[day+1][i]}] =max_result;
+                }
 
                 int score = max_path(day+1 , i) + vaccation[day][i];
                 max_result = max(score,max_result);
+
+
             }
                 //max_result= max(max_path(day+1,i),max_result) + vaccation[day][i] ;
         }
