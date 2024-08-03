@@ -63,11 +63,13 @@ class Solution(object):
             # if count is more than one ---> n is not number is power of 2
             if n & 1 == 1:
                 count = count + 1
-            n = n >> 1
+                
+            n = n >> 1 ## Shift bits to the right by 1 position  (1000 ----> 0100)
+            print(n)
 
         if count == 1:
             return True
         return False
 
 a=Solution()
-a.isPowerOfTwo(15)
+print(a.isPowerOfTwo(15,16))
