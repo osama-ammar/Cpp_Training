@@ -57,8 +57,18 @@ class Solution(object):
         #using bits count method  
         #All power of two numbers has only a one-bit set. So count the no. of set bits and if you get 1 then the number is power of 2. 
         count = 0
-        while n > 0:
-            # compares each bit of its operands. If both bits are 1, it results in 1; otherwise, it results in 0.
+        """ 
+        # When you do n & 1, you are comparing the bits of the number n with the bits of the number 1. In binary, the number 1 is written as 0001.:
+        # compares each bit of its operands. If both bits are 1, it results in 1; otherwise, it results in 0.
+        Since 1 in binary is 0001, it means that n & 1 will only check the very last bit of n. Here's why:
+                If the last bit of n is 1, then n & 1 will be 1.
+                If the last bit of n is 0, then n & 1 will be 0.
+                
+        n & 1 checks the last block of n.
+        If n & 1 is 1, it means the last block is 1.
+        If n & 1 is 0, it means the last block is 0.
+        """
+        while n > 0:      
             # mean : for each bit in bits representation of n ---> if this bit ==1 count++ ---> move to the next bit  ---> for number is power of 2 :: they should have only 1 in their bits representation ex(0010000)
             # if count is more than one ---> n is not number is power of 2
             if n & 1 == 1:
