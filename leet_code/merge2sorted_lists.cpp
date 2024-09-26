@@ -62,12 +62,15 @@ public:
     auto *pointer_max = list2;
     auto *list_temp = list1;
 
+    // in case of one list is empty
     if (list1 == nullptr)
       return list2;
 
     if (list2 == nullptr)
       return list1;
 
+
+    // ensure starting from the min val
     if (list1->val > list2->val) {
       pointer_min = list2;
       pointer_max = list1;
@@ -88,6 +91,7 @@ public:
       // std::cout << pointer_min->val << std::endl;
     }
 
+    // in case of we finsihed and still we have some items in on of the lists
     pointer_min->next = pointer_max;
 
     return list_temp;
