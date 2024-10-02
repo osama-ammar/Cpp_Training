@@ -27,15 +27,11 @@ class Solution(object):
 
         if year%100==0:
             #THEN IT'S A CENTURY YEAR EX)1900 ,2000
-            if year%400==0:
+            if year%400==0  or year%4==0 :
                 return "leab"
             else:
                 return "normal"
-        if year%4==0 :
-            return "leab"
-        else:
-            return "normal"
- 
+
 
     def daysBetweenDates(self, date1, date2):
         """
