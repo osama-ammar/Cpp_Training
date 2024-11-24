@@ -41,21 +41,16 @@ try coding another solution using the divide and conquer approach, which is more
 """
 
 
-
-
-
-
-
-
-
-
-
 # Note : here , it's not about finding the subarray but finding the max sum
+    # Initialize variables to track the max sum and current sum
+    # Iterate through the array starting from the second element
+    # Update max_sum if the current_sum is larger
 
 from typing import List
 class Solution:
     def maxSubArray(self, nums: List[int]) -> int:
         # Initialize variables to track the max sum and current sum
+        
         max_sum = nums[0]
         current_sum = nums[0]
 
