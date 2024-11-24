@@ -1,0 +1,15 @@
+# ignored folders
+
+**/build/
+
+
+
+
+
+
+#ignored files
+
+*.exe
+
+
+
