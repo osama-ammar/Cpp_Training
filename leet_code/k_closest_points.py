@@ -1,6 +1,9 @@
 
 
 """
+K closese points
+
+related to 347. Top K Frequent Elements
 Given an array of points where points[i] = [xi, yi] represents a point on the X-Y plane and an integer k, return the k closest points to the origin (0, 0).
 
 The distance between two points on the X-Y plane is the Euclidean distance (i.e., √(x1 - x2)2 + (y1 - y2)2).
@@ -33,21 +36,23 @@ Explanation: The answer [[-2,4],[3,3]] would also be accepted.
 
 import heapq
 from typing import List
+
 class Solution:
     def kClosest(self, points: List[List[int]], k: int) -> List[List[int]]:
-        #find the distance between each point and the origin 
-        #at each step , save the distances and then sort
-        # get th kth closese distances and find their points in the dict
+        # find the distance between each point and the origin 
+        # at each step , save the distances and save the point with its distance in a list
+        # use max heap that automatically push max value at 1st item
 
         # using max heap : use negative input to push  heapq.heappush(max_heap,-input)
         #                : use negative input too to  search : ...if points_info[key]==-input:....
 
-
+        #remove (pop) len(nums)-k element ---> we will end with having least k elements
 
         points_info_list=[]
         closest_points=[]
         max_heap=[]
 
+        # base case (( very tricky point))
         if len(points)==k:
             return points
 
@@ -60,8 +65,8 @@ class Solution:
         for i in range(len(points)-k):
              -heapq.heappop(max_heap)
 
-        for item in points_info_list:
-            key,val = item
+        # find associated list[list]
+        for key,val in points_info_list:
             for dist in max_heap[0:k]:
                 if val==-dist:
                     closest_points.append(key)
