@@ -41,18 +41,7 @@ class Solution(object):
         :type n: int
         :rtype: bool
         """
-        # using log2 method ---.not working ????
-        # # given a**x =n --> log-a(n) =x
-        # if n<0:
-        #     return False
 
-        # result = math.log(n,2) 
-
-        # if result%1==0:
-        #     return True
-        # else:
-        #     return False
-        
         
         #using bits count method  
         #All power of two numbers has only a one-bit set. So count the no. of set bits and if you get 1 then the number is power of 2. 
@@ -67,14 +56,27 @@ class Solution(object):
         n & 1 checks the last block of n.
         If n & 1 is 1, it means the last block is 1.
         If n & 1 is 0, it means the last block is 0.
+        
+        In binary terms, n & 1 isolates the LSB of n. For example:
+
+            8 (1000 in binary) → 8 & 1 = 0
+            9 (1001 in binary) → 9 & 1 = 1
+            
+        # effect of n>>1    
+        if n = 8   binary:[1000]
+        n >> 1 ----> n=4  binary:[0100]
+        n >> 1 ----> n=2  binary:[0010]
+        and so on
         """
+        
+        
         while n > 0:      
             # mean : for each bit in bits representation of n ---> if this bit ==1 count++ ---> move to the next bit  ---> for number is power of 2 :: they should have only 1 in their bits representation ex(0010000)
             # if count is more than one ---> n is not number is power of 2
             if n & 1 == 1:
                 count = count + 1
                 
-            n = n >> 1 ## Shift bits to the right by 1 position  (1000 ----> 0100)
+            n = n >> 1 ## Shift bits to the right by 1 position  (1000 ----> 0100)---> meaning dividing n by 2 in bitwise level
             print(n)
 
         if count == 1:
@@ -82,4 +84,4 @@ class Solution(object):
         return False
 
 a=Solution()
-print(a.isPowerOfTwo(15,16))
+print(a.isPowerOfTwo(15,30))
