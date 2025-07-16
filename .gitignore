@@ -1,6 +1,8 @@
 # ignored folders
 
 **/build/
+**/.vscode/
+
 
 
 

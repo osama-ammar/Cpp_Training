@@ -3,3 +3,6 @@
 - OOP 
 - Algorithms
 - mamory managemnt
+- cmake project
+- cuda project
+- make things simple
